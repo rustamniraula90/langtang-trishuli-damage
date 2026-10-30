@@ -209,7 +209,7 @@ paper figures; `09_label_audit.py` now preserves existing judgements; cleaning-l
 added; licence column in the data table; availability statement names the deposit still to be made.
 Style: three threshold terms defined once (damaging height / decision threshold / probability level); "affected share";
 hedged "to our knowledge"; shorter title and running head; `hidelinks` and PDF metadata; `\pending` removed.
-Not done (defended): public DOI (author action), 10% body trim (body is about 6,400 words by a crude count excluding floats),
+Not done (defended): public DOI (author action; done 30 Oct 2026 as release v1.0.1, DOI 10.5281/zenodo.23802509), 10% body trim (body is about 6,400 words by a crude count excluding floats),
 Table I limitations column kept. Still 16 pages, 0 overfull.
 
 

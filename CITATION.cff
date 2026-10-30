@@ -6,7 +6,15 @@ authors:
   - family-names: Niraula
     given-names: Rustam
     affiliation: "Softwarica College of IT and E-Commerce (Coventry University)"
+doi: 10.5281/zenodo.23802508
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23802509
+    description: "Zenodo archive of release v1.0.1"
+  - type: doi
+    value: 10.5281/zenodo.23802508
+    description: "Zenodo concept DOI, resolves to the latest release"
 repository-code: "https://github.com/rustamniraula90/langtang-trishuli-damage"
-version: "1.0.0"
+version: "1.0.1"
 date-released: "2026-10-30"
 license: MIT

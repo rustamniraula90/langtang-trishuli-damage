@@ -7,6 +7,10 @@ The study joins Copernicus EMSR927 building-damage grades to pre-event Overture 
 reaches of the Bhote Koshi–Trishuli valley) and derives ten terrain features from the Copernicus GLO-30 DEM. Nine
 classical learners are tested with leave-one-reach-out evaluation and 1-km block bootstraps.
 
+Release v1.0.1 is archived on Zenodo: [10.5281/zenodo.23802509](https://doi.org/10.5281/zenodo.23802509)
+(concept DOI [10.5281/zenodo.23802508](https://doi.org/10.5281/zenodo.23802508) always resolves to the latest release).
+Citation details are in `CITATION.cff`.
+
 ## Layout
 
 | Path | Content |
