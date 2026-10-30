@@ -1,0 +1,18 @@
+                                          roc_auc  pr_auc  bal_acc  recall  precision     f1
+target    model               strategy                                                      
+affected  Logistic regression SMOTE         0.970   0.855    0.908   0.908      0.724  0.774
+                              none          0.971   0.859    0.879   0.791      0.813  0.776
+                              none+tuned    0.971   0.859    0.904   0.930      0.689  0.748
+                              weights       0.970   0.853    0.910   0.916      0.721  0.777
+          Random forest       SMOTE         0.917   0.814    0.839   0.748      0.741  0.680
+                              none          0.917   0.801    0.787   0.630      0.750  0.601
+                              none+tuned    0.917   0.801    0.831   0.814      0.630  0.656
+                              weights       0.927   0.822    0.839   0.751      0.728  0.667
+destroyed Logistic regression SMOTE         0.965   0.763    0.906   0.906      0.650  0.713
+                              none          0.965   0.772    0.825   0.689      0.753  0.695
+                              none+tuned    0.965   0.772    0.905   0.960      0.606  0.688
+                              weights       0.964   0.762    0.908   0.934      0.634  0.714
+          Random forest       SMOTE         0.923   0.727    0.839   0.744      0.662  0.595
+                              none          0.923   0.710    0.783   0.615      0.673  0.531
+                              none+tuned    0.923   0.710    0.832   0.811      0.529  0.561
+                              weights       0.933   0.729    0.841   0.757      0.655  0.591

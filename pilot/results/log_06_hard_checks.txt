@@ -1,0 +1,12 @@
+Near-channel subset (HAND<=30 m, dist<=300 m): 3597 buildings; affected share 0.72
+[near-channel, affected vs not] LogReg: Upper: n/a | Middle: n=2308 prev=0.85 AUC=0.884 PR=0.978 | Lower: n=1084 prev=0.40 AUC=0.829 PR=0.754
+[near-channel, affected vs not] RF: Upper: n/a | Middle: n=2308 prev=0.85 AUC=0.849 PR=0.970 | Lower: n=1084 prev=0.40 AUC=0.754 PR=0.651
+[near-channel, affected vs not] LogReg + attenuation: Upper: n/a | Middle: n=2308 prev=0.85 AUC=0.891 PR=0.979 | Lower: n=1084 prev=0.40 AUC=0.658 PR=0.624
+
+Among affected buildings only: 3360 ; destroyed share 0.75
+[affected only, destroyed vs damaged/possibly] LogReg: Upper: n=653 prev=0.81 AUC=0.868 PR=0.968 | Middle: n=2141 prev=0.79 AUC=0.818 PR=0.945 | Lower: n=566 prev=0.49 AUC=0.575 PR=0.561
+[affected only, destroyed vs damaged/possibly] RF: Upper: n=653 prev=0.81 AUC=0.695 PR=0.925 | Middle: n=2141 prev=0.79 AUC=0.732 PR=0.916 | Lower: n=566 prev=0.49 AUC=0.589 PR=0.587
+[affected only, destroyed vs damaged/possibly] LogReg + attenuation: Upper: n=653 prev=0.81 AUC=0.901 PR=0.975 | Middle: n=2141 prev=0.79 AUC=0.812 PR=0.940 | Lower: n=566 prev=0.49 AUC=0.766 PR=0.741
+
+Single-feature AUC within near-channel subset: {'hand': 0.758, 'dist': 0.763, 'slope': 0.449, 'relief': 0.302}
+Single-feature AUC destroyed|affected: {'hand': 0.709, 'dist': 0.676, 'slope': 0.59, 'relief': 0.431}

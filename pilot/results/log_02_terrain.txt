@@ -1,0 +1,5 @@
+DEM gap cells after mosaic: 7883
+all-channel cells: 9445 max drainage km2: 6007
+entry snapped to row 2666, col 1760, drainage 3044 km2
+flood path: 3353 cells, -15.0 km to 103.0 km from the border
+wrote terrain rasters to data/interim

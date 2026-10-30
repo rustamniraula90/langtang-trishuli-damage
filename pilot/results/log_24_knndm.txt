@@ -1,0 +1,37 @@
+Upper affected done
+Upper destroyed done
+Middle affected done
+Middle destroyed done
+Lower affected done
+Lower destroyed done
+
+Fold designs (distances in m):
+  test    design     W_m  median_cv_nn_m  median_pred_nn_m   q     fold_sizes
+ Upper    random 27143.0            13.0           23354.0 NaN 5601/5583/5474
+ Upper block_1km 26813.0           282.0           23354.0 NaN 5554/5552/5552
+ Upper     kNNDM 23474.0          3044.0           23354.0 4.0 7141/3815/5702
+Middle    random  6539.0            13.0            6178.0 NaN 2410/2322/2315
+Middle block_1km  6193.0           327.0            6178.0 NaN 2349/2349/2349
+Middle     kNNDM  3997.0          1787.0            6178.0 8.0 2453/2177/2417
+ Lower    random  8566.0            13.0           10065.0 NaN 3845/3786/3670
+ Lower block_1km  8286.0           254.0           10065.0 NaN 3771/3765/3765
+ Lower     kNNDM  6918.0          1204.0           10065.0 8.0 3851/3599/3851
+
+Mean inner AUC, held-out AUC and gap over reaches and targets:
+                               inner_auc  heldout_auc    gap
+model               design                                  
+Gradient boosting   block_1km      0.975        0.941  0.034
+                    kNNDM          0.963        0.941  0.022
+                    random         0.993        0.941  0.052
+Logistic regression block_1km      0.976        0.967  0.009
+                    kNNDM          0.960        0.967 -0.007
+                    random         0.981        0.967  0.014
+Random forest       block_1km      0.977        0.929  0.048
+                    kNNDM          0.965        0.929  0.035
+                    random         0.993        0.929  0.064
+
+Mean |gap| by design:
+design
+block_1km    0.034
+kNNDM        0.025
+random       0.045

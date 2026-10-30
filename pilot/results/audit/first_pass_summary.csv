@@ -1,0 +1,13 @@
+aoi,stratum,agree,disagree,plausible,unclear
+AOI01,Damaged or possibly,0,0,7,3
+AOI01,Destroyed,16,0,0,4
+AOI01,Not affected,20,0,0,0
+AOI02,Damaged or possibly,5,0,3,2
+AOI02,Destroyed,18,0,0,2
+AOI02,Not affected,19,0,0,1
+AOI03,Damaged or possibly,3,0,2,5
+AOI03,Destroyed,18,0,0,2
+AOI03,Not affected,20,0,0,0
+AOI05,Damaged or possibly,2,0,1,7
+AOI05,Destroyed,7,7,0,6
+AOI05,Not affected,17,0,0,3

@@ -1,0 +1,13 @@
+feature,mutual_info,rfe_rank,l1_entry_order
+dist,0.2178,1,3
+hand,0.3265,2,1
+logd,0.2853,3,2
+slope,0.1843,4,5
+chan_slope,0.2787,5,11
+log_spi,0.2803,6,10
+relief,0.2372,7,8
+log_valley_w20,0.1833,8,6
+curv_plan,0.1715,9,9
+bend,0.2732,10,7
+twi,0.1729,11,12
+curv_profile,0.1929,12,4

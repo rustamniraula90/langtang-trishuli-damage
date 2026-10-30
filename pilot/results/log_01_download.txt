@@ -1,0 +1,4 @@
+ems EMSR927_AOI01_GRA_PRODUCT_v1 8 json layers
+ems EMSR927_AOI02_GRA_PRODUCT_v2 7 json layers
+ems EMSR927_AOI03_GRA_PRODUCT_v1 10 json layers
+ems EMSR927_AOI05_GRA_PRODUCT_v3 6 json layers

@@ -1,0 +1,29 @@
+test                                                                Upper               Middle                Lower
+target               features    model                                                                             
+affected             attenuation Gradient boosting    0.953 (0.830-0.991)  0.987 (0.978-0.994)  0.952 (0.934-0.965)
+                                 Random forest        0.957 (0.819-0.994)  0.982 (0.970-0.992)  0.949 (0.926-0.964)
+                     main        Gradient boosting    0.879 (0.715-0.976)  0.966 (0.937-0.983)  0.944 (0.918-0.964)
+                                 Linear SVM           0.970 (0.900-0.998)  0.983 (0.965-0.991)  0.956 (0.941-0.969)
+                                 Logistic regression  0.970 (0.895-0.998)  0.983 (0.966-0.991)  0.958 (0.943-0.971)
+                                 Random forest        0.858 (0.694-0.970)  0.957 (0.929-0.976)  0.947 (0.924-0.964)
+destroyed            main        Gradient boosting    0.943 (0.876-0.986)  0.963 (0.939-0.980)  0.954 (0.934-0.972)
+                                 Linear SVM           0.953 (0.884-0.990)  0.983 (0.972-0.992)  0.958 (0.933-0.975)
+                                 Logistic regression  0.952 (0.882-0.990)  0.983 (0.971-0.992)  0.958 (0.934-0.975)
+                                 Random forest        0.904 (0.818-0.988)  0.960 (0.939-0.977)  0.951 (0.925-0.971)
+destroyed | affected attenuation Gradient boosting    0.801 (0.704-0.921)  0.796 (0.740-0.858)  0.706 (0.618-0.802)
+                                 Linear SVM           0.930 (0.868-0.976)  0.818 (0.780-0.853)  0.749 (0.676-0.823)
+                                 Logistic regression  0.930 (0.871-0.976)  0.818 (0.781-0.853)  0.750 (0.678-0.823)
+                                 Random forest        0.885 (0.842-0.918)  0.818 (0.769-0.875)  0.713 (0.612-0.822)
+
+Paired: logistic regression minus other model (positive = logistic regression better)
+test                                                                    Upper                     Middle                      Lower
+target               features    other                                                                                             
+affected             main        Gradient boosting  +0.091 (+0.019 to +0.183)  +0.017 (+0.006 to +0.034)  +0.014 (-0.003 to +0.040)
+                                 Linear SVM         -0.001 (-0.005 to +0.000)  +0.000 (-0.000 to +0.001)  +0.002 (+0.000 to +0.004)
+                                 Random forest      +0.112 (+0.022 to +0.206)  +0.026 (+0.011 to +0.045)  +0.011 (-0.004 to +0.034)
+destroyed            main        Gradient boosting  +0.009 (-0.013 to +0.039)  +0.020 (+0.009 to +0.038)  +0.004 (-0.007 to +0.018)
+                                 Linear SVM         -0.001 (-0.004 to +0.001)  -0.000 (-0.001 to +0.000)  +0.000 (-0.001 to +0.001)
+                                 Random forest      +0.048 (+0.001 to +0.114)  +0.023 (+0.012 to +0.037)  +0.007 (-0.001 to +0.016)
+destroyed | affected attenuation Gradient boosting  +0.130 (+0.049 to +0.215)  +0.022 (-0.031 to +0.054)  +0.044 (-0.011 to +0.097)
+                                 Linear SVM         +0.000 (-0.000 to +0.004)  +0.000 (-0.002 to +0.002)  +0.001 (-0.004 to +0.006)
+                                 Random forest      +0.045 (+0.002 to +0.095)  +0.000 (-0.047 to +0.029)  +0.037 (-0.020 to +0.084)

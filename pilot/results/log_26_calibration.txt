@@ -1,0 +1,112 @@
+affected Upper done
+affected Middle done
+affected Lower done
+destroyed Upper done
+destroyed Middle done
+destroyed Lower done
+
+Held-out calibration (per reach):
+   target   test                            model  prevalence  mean_pred  roc_auc  brier  cal_intercept  cal_slope   ece
+ affected  Upper            LogReg, no correction       0.773      0.562    0.971  0.159          4.103      0.601 0.211
+ affected  Upper            LogReg, class weights       0.773      0.666    0.969  0.090          2.272      0.608 0.107
+ affected  Upper                    LogReg, SMOTE       0.773      0.644    0.969  0.105          2.864      0.565 0.129
+ affected  Upper     Random forest, class weights       0.773      0.483    0.855  0.229          1.798      1.847 0.289
+ affected  Upper Gradient boosting, class weights       0.773      0.422    0.879  0.310          3.865      0.666 0.350
+ affected Middle            LogReg, no correction       0.205      0.169    0.984  0.047          0.811      1.095 0.036
+ affected Middle            LogReg, class weights       0.205      0.227    0.983  0.044         -0.539      1.009 0.023
+ affected Middle                    LogReg, SMOTE       0.205      0.227    0.983  0.044         -0.559      0.961 0.022
+ affected Middle     Random forest, class weights       0.205      0.215    0.957  0.061         -0.120      1.493 0.049
+ affected Middle Gradient boosting, class weights       0.205      0.180    0.966  0.072          1.009      0.556 0.064
+ affected  Lower            LogReg, no correction       0.091      0.166    0.958  0.062         -1.511      0.887 0.074
+ affected  Lower            LogReg, class weights       0.091      0.232    0.958  0.100         -2.633      0.879 0.140
+ affected  Lower                    LogReg, SMOTE       0.091      0.230    0.957  0.099         -2.610      0.879 0.139
+ affected  Lower     Random forest, class weights       0.091      0.261    0.947  0.103         -2.135      1.187 0.170
+ affected  Lower Gradient boosting, class weights       0.091      0.205    0.944  0.102         -3.694      0.488 0.113
+destroyed  Upper            LogReg, no correction       0.628      0.512    0.953  0.120          2.030      0.568 0.120
+destroyed  Upper            LogReg, class weights       0.628      0.614    0.952  0.087          0.268      0.537 0.065
+destroyed  Upper                    LogReg, SMOTE       0.628      0.579    0.953  0.093          0.952      0.506 0.075
+destroyed  Upper     Random forest, class weights       0.628      0.401    0.902  0.210          1.347      2.354 0.228
+destroyed  Upper Gradient boosting, class weights       0.628      0.309    0.943  0.279          4.772      0.784 0.319
+destroyed Middle            LogReg, no correction       0.162      0.123    0.984  0.046          0.916      1.233 0.040
+destroyed Middle            LogReg, class weights       0.162      0.199    0.983  0.045         -0.942      1.011 0.037
+destroyed Middle                    LogReg, SMOTE       0.162      0.198    0.983  0.044         -0.984      0.925 0.035
+destroyed Middle     Random forest, class weights       0.162      0.193    0.960  0.056         -0.392      1.434 0.047
+destroyed Middle Gradient boosting, class weights       0.162      0.179    0.963  0.072         -0.828      0.488 0.063
+destroyed  Lower            LogReg, no correction       0.044      0.101    0.959  0.045         -1.704      0.745 0.057
+destroyed  Lower            LogReg, class weights       0.044      0.166    0.958  0.084         -3.205      0.667 0.122
+destroyed  Lower                    LogReg, SMOTE       0.044      0.157    0.958  0.081         -3.258      0.604 0.113
+destroyed  Lower     Random forest, class weights       0.044      0.190    0.951  0.082         -2.570      1.051 0.145
+destroyed  Lower Gradient boosting, class weights       0.044      0.151    0.954  0.082         -3.805      0.575 0.106
+
+Mean over reaches and targets:
+                                  roc_auc  brier  cal_intercept  cal_slope    ece
+model                                                                            
+Gradient boosting, class weights    0.941  0.153          0.220      0.593  0.169
+LogReg, SMOTE                       0.967  0.078         -0.599      0.740  0.086
+LogReg, class weights               0.967  0.075         -0.797      0.785  0.082
+LogReg, no correction               0.968  0.080          0.774      0.855  0.090
+Random forest, class weights        0.929  0.124         -0.346      1.561  0.155
+
+Intercept-only recalibration with k labelled buildings from the held-out reach (median over repeats):
+                                            brier_before  brier_after  ece_before  ece_after
+model                 target    test   k                                                    
+LogReg, class weights affected  Lower  10          0.100        0.053       0.140      0.049
+                                       20          0.100        0.049       0.140      0.031
+                                       50          0.100        0.048       0.140      0.027
+                                       100         0.100        0.047       0.140      0.024
+                                       200         0.100        0.047       0.140      0.023
+                                Middle 10          0.044        0.045       0.023      0.026
+                                       20          0.044        0.045       0.023      0.026
+                                       50          0.044        0.044       0.023      0.022
+                                       100         0.044        0.043       0.023      0.016
+                                       200         0.044        0.042       0.023      0.014
+                                Upper  10          0.090        0.060       0.107      0.047
+                                       20          0.090        0.058       0.107      0.044
+                                       50          0.090        0.056       0.107      0.040
+                                       100         0.090        0.056       0.107      0.039
+                                       200         0.090        0.055       0.107      0.038
+                      destroyed Lower  10          0.084        0.043       0.122      0.050
+                                       20          0.084        0.039       0.122      0.038
+                                       50          0.084        0.034       0.122      0.019
+                                       100         0.084        0.034       0.122      0.019
+                                       200         0.085        0.034       0.122      0.018
+                                Middle 10          0.045        0.043       0.037      0.028
+                                       20          0.045        0.042       0.037      0.024
+                                       50          0.045        0.040       0.037      0.017
+                                       100         0.045        0.040       0.037      0.014
+                                       200         0.045        0.039       0.037      0.011
+                                Upper  10          0.087        0.090       0.065      0.070
+                                       20          0.087        0.089       0.065      0.069
+                                       50          0.087        0.088       0.066      0.066
+                                       100         0.087        0.087       0.066      0.064
+                                       200         0.087        0.087       0.066      0.061
+LogReg, no correction affected  Lower  10          0.062        0.050       0.074      0.040
+                                       20          0.062        0.048       0.074      0.028
+                                       50          0.062        0.047       0.074      0.025
+                                       100         0.062        0.046       0.074      0.022
+                                       200         0.062        0.046       0.074      0.022
+                                Middle 10          0.047        0.045       0.036      0.031
+                                       20          0.047        0.044       0.036      0.024
+                                       50          0.047        0.043       0.036      0.019
+                                       100         0.047        0.042       0.036      0.015
+                                       200         0.047        0.042       0.036      0.013
+                                Upper  10          0.159        0.073       0.211      0.073
+                                       20          0.159        0.061       0.211      0.047
+                                       50          0.159        0.058       0.211      0.040
+                                       100         0.159        0.057       0.211      0.039
+                                       200         0.158        0.056       0.211      0.038
+                      destroyed Lower  10          0.045        0.035       0.057      0.026
+                                       20          0.045        0.033       0.057      0.021
+                                       50          0.045        0.033       0.057      0.018
+                                       100         0.045        0.032       0.057      0.016
+                                       200         0.045        0.032       0.057      0.015
+                                Middle 10          0.046        0.044       0.040      0.035
+                                       20          0.046        0.042       0.040      0.026
+                                       50          0.046        0.040       0.040      0.021
+                                       100         0.046        0.039       0.040      0.015
+                                       200         0.046        0.039       0.040      0.014
+                                Upper  10          0.121        0.093       0.120      0.072
+                                       20          0.121        0.090       0.121      0.063
+                                       50          0.120        0.087       0.120      0.061
+                                       100         0.120        0.086       0.120      0.060
+                                       200         0.120        0.084       0.121      0.059

@@ -1,0 +1,25 @@
+Optimism gap (mean over targets and reaches):
+features               all  attenuation   main
+model                                         
+Decision tree        0.076        0.118  0.120
+Gradient boosting    0.045        0.044  0.100
+LDA                  0.021        0.020  0.029
+Linear SVM           0.023        0.020  0.022
+Logistic regression  0.031        0.021  0.022
+Naive Bayes          0.021        0.018  0.034
+RBF SVM (Nystroem)   0.066        0.102  0.043
+Random forest        0.042        0.036  0.069
+k-NN                 0.051        0.020  0.063
+
+Main feature set:
+                      inner_auc  roc_auc    gap
+model                                         
+Linear SVM               0.926    0.905  0.022
+Logistic regression      0.930    0.908  0.022
+LDA                      0.903    0.874  0.029
+Naive Bayes              0.881    0.848  0.034
+RBF SVM (Nystroem)       0.923    0.880  0.043
+k-NN                     0.900    0.837  0.063
+Random forest            0.931    0.862  0.069
+Gradient boosting        0.928    0.827  0.100
+Decision tree            0.892    0.772  0.120

@@ -1,0 +1,6 @@
+silhouette by k: {2: 0.268, 3: 0.192, 4: 0.182, 5: 0.15, 6: 0.153} -> k = 2
+agreement K-means vs Ward (adjusted Rand index, sample of 2500): 0.730
+            n  share_destroyed    hand     dist   slope   relief  curv_profile  curv_plan    twi  log_valley_w20  chan_slope   bend  Lower  Middle  Upper
+cluster                                                                                                                                                  
+0        2602            0.736  18.431  127.279   7.539   85.773        -0.001      0.001  6.878           5.553       0.006 -0.038   0.21    0.78   0.01
+1         758            0.778  39.355  127.279  20.912  237.634        -0.002      0.000  6.501           4.951       0.025  0.000   0.02    0.16   0.82

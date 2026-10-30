@@ -1,0 +1,15 @@
+pilot/data/raw/
+pilot/data/interim/
+pilot/results/audit/chips_hd/
+pilot/.venv/
+__pycache__/
+*.pyc
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/*.bak

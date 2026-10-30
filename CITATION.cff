@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code or these tables, please cite the paper and this repository."
+title: "Where the Flood Reached: Terrain-Only Classical Machine Learning of Building Damage in the 2026 Langtang Lirung–Trishuli Debris Flood, Nepal"
+type: software
+authors:
+  - family-names: Niraula
+    given-names: Rustam
+    affiliation: "Softwarica College of IT and E-Commerce (Coventry University)"
+repository-code: "https://github.com/rustamniraula90/langtang-trishuli-damage"
+version: "1.0.0"
+date-released: "2026-10-30"
+license: MIT

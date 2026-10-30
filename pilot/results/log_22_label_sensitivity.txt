@@ -1,0 +1,19 @@
+                           variant               target     n  Upper  Middle  Lower  mean
+                      main (R1-R3)             affected 17503  0.970   0.983  0.958 0.970
+                      main (R1-R3)            destroyed 17503  0.952   0.983  0.958 0.964
+                      main (R1-R3) destroyed | affected  3360  0.930   0.818  0.750 0.833
+R1': ambiguous -> possibly damaged             affected 18785  0.974   0.984  0.963 0.974
+R1': ambiguous -> possibly damaged            destroyed 18785  0.657   0.953  0.924 0.845
+R1': ambiguous -> possibly damaged destroyed | affected  4642  0.480   0.638  0.542 0.553
+          R2: no minimum footprint             affected 17609  0.970   0.983  0.956 0.970
+          R2: no minimum footprint            destroyed 17609  0.952   0.983  0.957 0.964
+          R2: no minimum footprint destroyed | affected  3360  0.930   0.818  0.750 0.833
+       R2: minimum footprint 20 m2             affected 16011  0.971   0.983  0.959 0.971
+       R2: minimum footprint 20 m2            destroyed 16011  0.946   0.982  0.956 0.961
+       R2: minimum footprint 20 m2 destroyed | affected  3360  0.930   0.818  0.750 0.833
+        'possibly damaged' removed             affected 16930  0.986   0.989  0.968 0.981
+        'possibly damaged' removed            destroyed 16930  0.965   0.986  0.970 0.974
+        'possibly damaged' removed destroyed | affected  2787  0.863   0.745  0.723 0.777
+  Phosretar 'destroyed' -> damaged             affected 17503  0.970   0.983  0.958 0.970
+  Phosretar 'destroyed' -> damaged            destroyed 17503  0.946   0.958    NaN 0.952
+  Phosretar 'destroyed' -> damaged destroyed | affected  3360  0.895   0.840    NaN 0.868

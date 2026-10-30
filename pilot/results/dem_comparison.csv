@@ -1,0 +1,2 @@
+median_diff_m,mean_abs_diff_m,share_abs_diff_gt_5m,auc_hand_glo,auc_hand_fab
+-1.5069046,2.686594,0.15585899560075417,0.9327838649777948,0.9371206477712346

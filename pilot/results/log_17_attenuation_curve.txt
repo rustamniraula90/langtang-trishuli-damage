@@ -1,0 +1,22 @@
+affected: leave-one-bin-out RMSE {'linear': 10.37, 'log(c=1)': 5.36, 'log(c=2)': 4.91, 'log(c=5)': 4.66, 'log(c=10)': 5.14, 'log(c=20)': 6.16, 'log(c=40)': 7.34}
+destroyed: leave-one-bin-out RMSE {'linear': 5.51, 'log(c=1)': 7.31, 'log(c=2)': 6.58, 'log(c=5)': 5.35, 'log(c=10)': 4.51, 'log(c=20)': 4.05, 'log(c=40)': 4.07}
+   target   form  c_km  bins  intercept   slope  slope_ci_low  slope_ci_high ci_scheme  change_per_doubling_m                           per_doubling_ci    r2  lobo_rmse
+ affected linear     0    18     70.716  -0.674        -0.775         -0.350     block                    NaN                                      None 0.794     10.374
+ affected    log     5    18    143.909 -28.081       -31.534        -24.195     block                -19.464 (-21.85756448865047, -16.771011749052395) 0.940      4.656
+destroyed linear     0    17     57.363  -0.556        -0.676         -0.425     block                    NaN                                      None 0.895      5.510
+destroyed    log    20    17    167.286 -33.171       -41.588        -28.727     block                -22.992   (-28.8264886882255, -19.91207376511358) 0.929      4.049
+
+Slope intervals by bootstrap scheme (log form: metres per doubling of distance from the source)
+   target   form  c_km   scheme  n_boot   slope  slope_ci_low  slope_ci_high  slope_sd  per_doubling_m  per_doubling_ci_low  per_doubling_ci_high
+ affected linear     0    block     300  -0.674        -0.775         -0.350     0.119             NaN                  NaN                   NaN
+ affected linear     0 building     300  -0.674        -0.720         -0.459     0.083             NaN                  NaN                   NaN
+ affected linear     0      bin     300  -0.674        -0.866         -0.307     0.143             NaN                  NaN                   NaN
+ affected    log     5    block     300 -28.081       -31.534        -24.195     2.007         -19.464              -21.858               -16.771
+ affected    log     5 building     300 -28.081       -30.392        -25.483     1.330         -19.464              -21.066               -17.663
+ affected    log     5      bin     300 -28.081       -30.678        -21.454     2.310         -19.464              -21.264               -14.871
+destroyed linear     0    block     300  -0.556        -0.676         -0.425     0.068             NaN                  NaN                   NaN
+destroyed linear     0 building     300  -0.556        -0.612         -0.512     0.028             NaN                  NaN                   NaN
+destroyed linear     0      bin     300  -0.556        -0.671         -0.381     0.077             NaN                  NaN                   NaN
+destroyed    log    20    block     300 -33.171       -41.588        -28.727     3.356         -22.992              -28.826               -19.912
+destroyed    log    20 building     300 -33.171       -36.800        -30.983     1.462         -22.992              -25.508               -21.476
+destroyed    log    20      bin     300 -33.171       -43.514        -29.971     3.564         -22.992              -30.162               -20.774

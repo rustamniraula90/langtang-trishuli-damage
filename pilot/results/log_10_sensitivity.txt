@@ -1,0 +1,38 @@
+DEM comparison: {'median_diff_m': np.float32(-1.507), 'mean_abs_diff_m': np.float32(2.687), 'share_abs_diff_gt_5m': np.float64(0.156), 'auc_hand_glo': 0.933, 'auc_hand_fab': 0.937}
+                                      variant               features    target     n  Lower  Middle  Upper  mean
+             main (flood path, GLO-30, R1-R3) hand+dist+slope+relief  affected 17503  0.947   0.979  0.962 0.963
+             main (flood path, GLO-30, R1-R3) hand+dist+slope+relief destroyed 17503  0.933   0.979  0.931 0.947
+             main (flood path, GLO-30, R1-R3)              hand+dist  affected 17503  0.918   0.980  0.963 0.954
+             main (flood path, GLO-30, R1-R3)              hand+dist destroyed 17503  0.913   0.976  0.937 0.942
+                       GLO-30, channel=all200 hand+dist+slope+relief  affected 17503  0.946   0.981  0.963 0.963
+                       GLO-30, channel=all200 hand+dist+slope+relief destroyed 17503  0.930   0.979  0.936 0.949
+                       GLO-30, channel=all200              hand+dist  affected 17503  0.914   0.982  0.965 0.954
+                       GLO-30, channel=all200              hand+dist destroyed 17503  0.908   0.978  0.943 0.943
+                       GLO-30, channel=all500 hand+dist+slope+relief  affected 17503  0.946   0.981  0.963 0.963
+                       GLO-30, channel=all500 hand+dist+slope+relief destroyed 17503  0.930   0.979  0.936 0.949
+                       GLO-30, channel=all500              hand+dist  affected 17503  0.914   0.982  0.965 0.954
+                       GLO-30, channel=all500              hand+dist destroyed 17503  0.908   0.978  0.943 0.943
+                      GLO-30, channel=all1000 hand+dist+slope+relief  affected 17503  0.947   0.979  0.962 0.963
+                      GLO-30, channel=all1000 hand+dist+slope+relief destroyed 17503  0.933   0.979  0.931 0.947
+                      GLO-30, channel=all1000              hand+dist  affected 17503  0.918   0.980  0.963 0.954
+                      GLO-30, channel=all1000              hand+dist destroyed 17503  0.913   0.976  0.937 0.942
+                         FABDEM, channel=path hand+dist+slope+relief  affected 17503  0.950   0.981  0.953 0.961
+                         FABDEM, channel=path hand+dist+slope+relief destroyed 17503  0.936   0.980  0.921 0.946
+                         FABDEM, channel=path              hand+dist  affected 17503  0.920   0.981  0.954 0.951
+                         FABDEM, channel=path              hand+dist destroyed 17503  0.915   0.976  0.928 0.940
+                       FABDEM, channel=all200 hand+dist+slope+relief  affected 17503  0.950   0.981  0.955 0.962
+                       FABDEM, channel=all200 hand+dist+slope+relief destroyed 17503  0.936   0.981  0.926 0.948
+                       FABDEM, channel=all200              hand+dist  affected 17503  0.920   0.981  0.957 0.953
+                       FABDEM, channel=all200              hand+dist destroyed 17503  0.916   0.977  0.933 0.942
+                       FABDEM, channel=all500 hand+dist+slope+relief  affected 17503  0.950   0.981  0.955 0.962
+                       FABDEM, channel=all500 hand+dist+slope+relief destroyed 17503  0.936   0.981  0.926 0.948
+                       FABDEM, channel=all500              hand+dist  affected 17503  0.920   0.981  0.957 0.953
+                       FABDEM, channel=all500              hand+dist destroyed 17503  0.916   0.977  0.933 0.942
+                      FABDEM, channel=all1000 hand+dist+slope+relief  affected 17503  0.950   0.981  0.953 0.961
+                      FABDEM, channel=all1000 hand+dist+slope+relief destroyed 17503  0.936   0.980  0.921 0.946
+                      FABDEM, channel=all1000              hand+dist  affected 17503  0.920   0.981  0.954 0.951
+                      FABDEM, channel=all1000              hand+dist destroyed 17503  0.915   0.976  0.928 0.940
+ambiguous rows relabelled as possibly damaged hand+dist+slope+relief  affected 18785  0.946   0.980  0.966 0.964
+ambiguous rows relabelled as possibly damaged hand+dist+slope+relief destroyed 18785  0.917   0.955  0.653 0.842
+     negatives: OpenStreetMap footprints only hand+dist+slope+relief  affected 11580  0.948   0.983  0.962 0.964
+     negatives: OpenStreetMap footprints only hand+dist+slope+relief destroyed 11580  0.912   0.978  0.919 0.936

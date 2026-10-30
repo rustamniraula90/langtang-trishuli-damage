@@ -1,0 +1,5 @@
+step,rows,removed
+EMS points + pre-event footprints in analysed areas,18908,0
+R1 drop ambiguous unlabelled footprints inside the flood trace,17626,1282
+R2 drop unaffected footprints < 10 m2,17520,106
+R3 drop unaffected twins < 8 m from an affected footprint,17503,17

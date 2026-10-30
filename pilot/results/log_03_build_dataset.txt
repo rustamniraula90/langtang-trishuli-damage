@@ -1,0 +1,12 @@
+  aoi    locality  ems_points  matched  ems_only  footprints  not_affected
+AOI01 Syapru Besi         433      378        55         556           287
+AOI02      Timure         431      401        30         626           327
+AOI03       Bidur        2343     2052       291       10818          8968
+AOI05   Phosretar         609      569        40        6492          5966
+grade  Damaged  Destroyed  Not affected  Possibly damaged
+aoi                                                      
+AOI01       25        239           287                60
+AOI02       14        292           327                23
+AOI03      188       1699          8968               254
+AOI05       55        275          5966               236
+missing HAND: 0

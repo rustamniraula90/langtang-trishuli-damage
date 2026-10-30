@@ -1,0 +1,79 @@
+[    43s] affected / main / test=Upper done
+[    64s] affected / main / test=Middle done
+[    91s] affected / main / test=Lower done
+[   142s] affected / attenuation / test=Upper done
+[   164s] affected / attenuation / test=Middle done
+[   192s] affected / attenuation / test=Lower done
+[   248s] affected / all / test=Upper done
+[   273s] affected / all / test=Middle done
+[   307s] affected / all / test=Lower done
+[   347s] destroyed / main / test=Upper done
+[   367s] destroyed / main / test=Middle done
+[   396s] destroyed / main / test=Lower done
+[   449s] destroyed / attenuation / test=Upper done
+[   470s] destroyed / attenuation / test=Middle done
+[   499s] destroyed / attenuation / test=Lower done
+[   561s] destroyed / all / test=Upper done
+[   585s] destroyed / all / test=Middle done
+[   617s] destroyed / all / test=Lower done
+[   628s] destroyed | affected / main / test=Upper done
+[   635s] destroyed | affected / main / test=Middle done
+[   646s] destroyed | affected / main / test=Lower done
+[   657s] destroyed | affected / attenuation / test=Upper done
+[   665s] destroyed | affected / attenuation / test=Middle done
+[   676s] destroyed | affected / attenuation / test=Lower done
+[   688s] destroyed | affected / all / test=Upper done
+[   696s] destroyed | affected / all / test=Middle done
+[   708s] destroyed | affected / all / test=Lower done
+
+== affected (all): mean ROC-AUC over held-out reaches ==
+features               all  attenuation   main
+model                                         
+Decision tree        0.898        0.829  0.878
+Gradient boosting    0.960        0.964  0.887
+LDA                  0.945        0.949  0.945
+Linear SVM           0.969        0.967  0.969
+Logistic regression  0.966        0.968  0.969
+Naive Bayes          0.953        0.961  0.934
+RBF SVM (Nystroem)   0.930        0.879  0.954
+Random forest        0.959        0.963  0.920
+k-NN                 0.927        0.959  0.918
+
+== affected (near-channel): mean ROC-AUC over held-out reaches ==
+features               all  attenuation   main
+model                                         
+Decision tree        0.670        0.720  0.750
+Gradient boosting    0.816        0.826  0.781
+LDA                  0.754        0.777  0.759
+Linear SVM           0.837        0.825  0.818
+Logistic regression  0.831        0.827  0.818
+Naive Bayes          0.710        0.763  0.652
+RBF SVM (Nystroem)   0.784        0.820  0.788
+Random forest        0.827        0.824  0.808
+k-NN                 0.664        0.775  0.622
+
+== destroyed (all): mean ROC-AUC over held-out reaches ==
+features               all  attenuation   main
+model                                         
+Decision tree        0.945        0.937  0.889
+Gradient boosting    0.966        0.963  0.943
+LDA                  0.937        0.943  0.907
+Linear SVM           0.972        0.971  0.964
+Logistic regression  0.968        0.968  0.964
+Naive Bayes          0.947        0.956  0.917
+RBF SVM (Nystroem)   0.951        0.914  0.956
+Random forest        0.967        0.961  0.940
+k-NN                 0.919        0.958  0.899
+
+== destroyed | affected (all): mean ROC-AUC over held-out reaches ==
+features               all  attenuation   main
+model                                         
+Decision tree        0.685        0.639  0.548
+Gradient boosting    0.758        0.759  0.651
+LDA                  0.805        0.817  0.769
+Linear SVM           0.817        0.828  0.781
+Logistic regression  0.802        0.827  0.792
+Naive Bayes          0.757        0.777  0.692
+RBF SVM (Nystroem)   0.745        0.724  0.730
+Random forest        0.783        0.798  0.724
+k-NN                 0.766        0.808  0.695

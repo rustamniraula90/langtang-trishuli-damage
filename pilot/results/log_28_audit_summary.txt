@@ -1,0 +1,65 @@
+reviewed: 200/200 rows  (blank rows use first_pass)
+researcher overrode the first pass in 40 rows
+sample_id        ems_grade first_pass judgement                                                                          note
+AOI01_003 Possibly damaged  plausible     agree             roof brownish/altered; sediment reaches house row; tarps adjacent
+AOI01_004 Possibly damaged    unclear plausible      roof intact; no flood trace in window (author: intact roof -> plausible)
+AOI01_009 Possibly damaged  plausible   unclear                         small roof not clearly visible; no flood trace nearby
+AOI01_011        Destroyed      agree   unclear                             post blurry blocky haze; building not discernible
+AOI01_015        Destroyed    unclear     agree                     outline on bare ground at sediment edge; neighbours stand
+AOI01_019        Destroyed    unclear     agree                           footprint on bare sand at plain edge; building gone
+AOI01_027        Destroyed    unclear     agree                footprint under pale sediment; neighbouring red roof also gone
+AOI01_030     Not affected      agree   unclear                         outline on grass in both; no building; village intact
+AOI01_035     Not affected      agree   unclear                                     cloud haze over outline in composite post
+AOI01_036     Not affected      agree   unclear                    outline on vegetation beside building; no building visible
+AOI01_040     Not affected      agree   unclear                             outline on forest/grass; no building; blocky post
+AOI02_052 Possibly damaged    unclear plausible      roof intact; no flood trace in window (author: intact roof -> plausible)
+AOI02_054          Damaged      agree plausible                small white roof intact inside sediment field; no pre building
+AOI02_055 Possibly damaged  plausible   unclear                   outline on vegetation at sediment edge; no building visible
+AOI02_056 Possibly damaged    unclear plausible      roof intact; no flood trace in window (author: intact roof -> plausible)
+AOI02_057          Damaged      agree   unclear              no structure visible in post; vegetation just past sediment edge
+AOI02_085     Not affected      agree   unclear                   outline on trees; no building visible; sediment ends nearby
+AOI02_087     Not affected      agree   unclear                     outline on forest; no building visible; vegetation intact
+AOI02_090     Not affected      agree   unclear            no building visible in outline; vegetation intact at sediment edge
+AOI02_091     Not affected      agree   unclear                      outline on trees; no building visible; vegetation intact
+AOI02_094     Not affected      agree   unclear                        outline on trees at sediment edge; no building visible
+AOI02_096     Not affected      agree   unclear                    outline on vegetation; no building visible; no flood trace
+AOI03_100          Damaged      agree plausible                       roof present but dull; sediment fills surrounding lanes
+AOI03_106 Possibly damaged    unclear plausible                             red roof intact; grass around; sediment 60 m away
+AOI03_107          Damaged    unclear plausible                             solar array rows intact; sediment at western edge
+AOI03_109 Possibly damaged    unclear plausible                            roof intact; grass around; debris field 80 m below
+AOI03_113        Destroyed      agree   unclear  village buried; dark block with shadow at footprint may be a standing storey
+AOI03_123        Destroyed      agree   unclear  village buried; dark block with shadow at footprint may be a standing storey
+AOI03_149     Not affected      agree   unclear                           outline on roadside ground; no building either date
+AOI05_151          Damaged      agree plausible                          red roof intact; sediment on road and field adjacent
+AOI05_159 Possibly damaged    unclear plausible      roof intact; no flood trace in window (author: intact roof -> plausible)
+AOI05_161        Destroyed    unclear     agree                                            footprint under uniform sand field
+AOI05_169        Destroyed    unclear     agree                                            footprint under uniform sand field
+AOI05_170        Destroyed   disagree     agree                       no roof in outline; grey rubble between standing houses
+AOI05_173        Destroyed      agree  disagree yellow roof at point still stands; grey-roof neighbour buried (point offset?)
+AOI05_177        Destroyed    unclear     agree                 outline on bare sediment between houses; no structure; no pre
+AOI05_178        Destroyed    unclear  disagree                         building standing with light roof; mud around; no pre
+AOI05_185     Not affected      agree   unclear                           outline on empty field in pre and post; no building
+AOI05_187     Not affected      agree   unclear                         outline on bare terrace; only tiny blue object in pre
+AOI05_199     Not affected      agree   unclear                   outline on tree canopy in pre and post; no building visible
+
+ final                      agree  disagree  plausible  unclear
+aoi   stratum                                                 
+AOI01 Damaged or possibly      1         0          6        3
+      Destroyed               18         0          0        2
+      Not affected            16         0          0        4
+AOI02 Damaged or possibly      3         0          5        2
+      Destroyed               18         0          0        2
+      Not affected            13         0          0        7
+AOI03 Damaged or possibly      2         0          6        2
+      Destroyed               16         0          0        4
+      Not affected            19         0          0        1
+AOI05 Damaged or possibly      1         0          3        6
+      Destroyed               10         8          0        2
+      Not affected            14         0          0        6
+
+--- numbers for the paper ---
+not affected: 62 of 62 judgeable appeared intact
+destroyed, upper+middle (AOI01-03): agreed in 52 of 52 judgeable
+destroyed, Phosretar (AOI05): 8 of 18 judgeable still appeared to stand
+damaged/possibly: 27 of 27 judgeable consistent (20 plausible only)
+unclear overall: 41 of 200

@@ -1,0 +1,5 @@
+aoi,ems_destroyed,ems_damaged,ems_possibly,ems_no_visible_damage,ems_total,post_event_imagery,our_rows,our_footprints,our_affected,our_not_affected,our_not_affected_clean,ems_affected,footprints_minus_ems_total
+AOI01,323.0,32.0,78.0,126.0,559.0,WorldView-3 0.3 m,611,556,324,287,176,433.0,-3.0
+AOI02,372.0,33.0,26.0,10.0,441.0,Legion 0.3 m,656,626,329,327,22,431.0,185.0
+AOI03,1826.0,220.0,297.0,9064.0,11407.0,ALOS 1.0 m; ALOS 0.8 m,11109,10818,2141,8968,8377,2343.0,-589.0
+AOI05,292.0,69.0,248.0,3893.0,4502.0,Pleiades-1A-1B 0.5 m; Pleiades Neo 0.3 m,6532,6492,566,5966,5691,609.0,1990.0

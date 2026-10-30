@@ -1,0 +1,29 @@
+   features    target   test  threshold     n  share_outside  auc_all  auc_inside  auc_outside  prev_inside  prev_outside  top_weight
+       main  affected  Upper      0.027   845          0.736    0.970       0.996        0.957        0.848         0.746        hand
+       main  affected Middle      0.126 10456          0.173    0.983       0.979        1.000        0.234         0.067        hand
+       main  affected  Lower      0.044  6202          0.069    0.958       0.955        0.927        0.097         0.012        hand
+       main destroyed  Upper      0.027   845          0.830    0.952       0.961        0.952        0.896         0.573        hand
+       main destroyed Middle      0.082 10456          0.208    0.983       0.979        0.996        0.174         0.120        hand
+       main destroyed  Lower      0.043  6202          0.078    0.958       0.957        0.983        0.046         0.025        hand
+attenuation  affected  Upper      0.082   845          1.000    0.968         NaN        0.968          NaN         0.773        hand
+attenuation  affected Middle      0.083 10456          0.096    0.988       0.987        1.000        0.225         0.010 hand_x_logd
+attenuation  affected  Lower      0.034  6202          0.648    0.947       0.969        0.961        0.069         0.103 hand_x_logd
+attenuation destroyed  Upper      0.062   845          1.000    0.956         NaN        0.956          NaN         0.628        hand
+attenuation destroyed Middle      0.073 10456          0.844    0.989       0.969        0.992        0.218         0.152 hand_x_logd
+attenuation destroyed  Lower      0.051  6202          0.671    0.969       0.973        0.966        0.058         0.038        hand
+
+Held-out AUC inside vs outside the AOA (affected, main set, Week 4 models):
+                            n_outside  n_inside  auc_outside  auc_inside
+test   model                                                            
+Lower  Gradient boosting        431.0    5771.0        0.980       0.940
+       Linear SVM               431.0    5771.0        0.929       0.953
+       Logistic regression      431.0    5771.0        0.927       0.955
+       Random forest            431.0    5771.0        0.989       0.943
+Middle Gradient boosting       1811.0    8645.0        0.999       0.959
+       Linear SVM              1811.0    8645.0        1.000       0.978
+       Logistic regression     1811.0    8645.0        1.000       0.979
+       Random forest           1811.0    8645.0        0.992       0.962
+Upper  Gradient boosting        622.0     223.0        0.843       0.964
+       Linear SVM               622.0     223.0        0.959       0.996
+       Logistic regression      622.0     223.0        0.957       0.996
+       Random forest            622.0     223.0        0.811       0.959

@@ -1,0 +1,201 @@
+sample_id,ems_grade,stratum,first_pass,judgement,confidence,note
+AOI01_000,Possibly damaged,Damaged or possibly,plausible,plausible,low,small roof intact and green around; sediment edge ~100 m away
+AOI01_001,Possibly damaged,Damaged or possibly,plausible,plausible,low,white roof intact; grey debris lobe ~15 m upslope
+AOI01_002,Possibly damaged,Damaged or possibly,plausible,plausible,low,small roof still present; sediment edge ~50 m away
+AOI01_003,Possibly damaged,Damaged or possibly,plausible,agree,low,roof brownish/altered; sediment reaches house row; tarps adjacent
+AOI01_004,Possibly damaged,Damaged or possibly,unclear,plausible,low,roof intact; no flood trace in window (author: intact roof -> plausible)
+AOI01_005,Possibly damaged,Damaged or possibly,unclear,unclear,low,no building in pre; grey patch in post; no flood trace
+AOI01_006,Possibly damaged,Damaged or possibly,unclear,unclear,low,shed roof not discernible in post; neighbours intact
+AOI01_007,Possibly damaged,Damaged or possibly,plausible,plausible,low,white roof still present; sediment plain just below
+AOI01_008,Possibly damaged,Damaged or possibly,plausible,plausible,low,red roof intact; sediment edge ~40 m downslope
+AOI01_009,Possibly damaged,Damaged or possibly,plausible,unclear,low,small roof not clearly visible; no flood trace nearby
+AOI01_010,Destroyed,Destroyed,agree,agree,high,footprint under uniform grey debris field
+AOI01_011,Destroyed,Destroyed,agree,unclear,low,post blurry blocky haze; building not discernible
+AOI01_012,Destroyed,Destroyed,agree,agree,high,whole village under grey sediment
+AOI01_013,Destroyed,Destroyed,agree,agree,high,footprint under uniform grey sediment
+AOI01_014,Destroyed,Destroyed,agree,agree,high,village under sediment field
+AOI01_015,Destroyed,Destroyed,unclear,agree,low,outline on bare ground at sediment edge; neighbours stand
+AOI01_016,Destroyed,Destroyed,agree,agree,high,footprint under uniform grey sediment
+AOI01_017,Destroyed,Destroyed,agree,agree,high,footprint on dark debris by river; building gone
+AOI01_018,Destroyed,Destroyed,unclear,unclear,low,post pale haze/blocky; building not discernible
+AOI01_019,Destroyed,Destroyed,unclear,agree,high,footprint on bare sand at plain edge; building gone
+AOI01_020,Destroyed,Destroyed,agree,agree,high,hamlet under dark debris field
+AOI01_021,Destroyed,Destroyed,agree,agree,low,no building in 2021 pre at point; area under uniform sediment
+AOI01_022,Destroyed,Destroyed,agree,agree,high,village under grey sediment
+AOI01_023,Destroyed,Destroyed,agree,agree,high,footprint on bare sediment; building gone; neighbours stand
+AOI01_024,Destroyed,Destroyed,agree,agree,high,village under grey sediment
+AOI01_025,Destroyed,Destroyed,agree,agree,low,area under uniform sediment; pre point beside small roof in trees
+AOI01_026,Destroyed,Destroyed,agree,agree,low,no structure in blurry post; grey debris field over yard
+AOI01_027,Destroyed,Destroyed,unclear,agree,low,footprint under pale sediment; neighbouring red roof also gone
+AOI01_028,Destroyed,Destroyed,agree,agree,high,footprint in boulder debris field; small building gone
+AOI01_029,Destroyed,Destroyed,agree,agree,high,whole street under uniform sediment; red roof gone
+AOI01_030,Not affected,Not affected,agree,unclear,low,outline on grass in both; no building; village intact
+AOI01_031,Not affected,Not affected,agree,agree,high,small pale roof intact; far from flood
+AOI01_032,Not affected,Not affected,agree,agree,high,pale roof intact; no flood trace nearby
+AOI01_033,Not affected,Not affected,agree,agree,high,grey roof intact; no flood nearby
+AOI01_034,Not affected,Not affected,agree,agree,low,outline on grass pre; dark structure post; no flood
+AOI01_035,Not affected,Not affected,agree,unclear,low,cloud haze over outline in composite post
+AOI01_036,Not affected,Not affected,agree,unclear,low,outline on vegetation beside building; no building visible
+AOI01_037,Not affected,Not affected,agree,agree,high,grey roof intact; village untouched
+AOI01_038,Not affected,Not affected,agree,agree,high,grey roof intact; no flood nearby
+AOI01_039,Not affected,Not affected,agree,agree,high,orange roof intact
+AOI01_040,Not affected,Not affected,agree,unclear,low,outline on forest/grass; no building; blocky post
+AOI01_041,Not affected,Not affected,agree,agree,low,small grey roof in outline post; pre grass; no flood
+AOI01_042,Not affected,Not affected,agree,agree,high,small pale roof intact on terraces
+AOI01_043,Not affected,Not affected,agree,agree,low,pale roof in outline post; pre grass; no flood
+AOI01_044,Not affected,Not affected,agree,agree,high,L-shaped dark building intact
+AOI01_045,Not affected,Not affected,agree,agree,high,dark building intact on path; far from flood
+AOI01_046,Not affected,Not affected,agree,agree,low,roof appears present in hazy composite; sediment 40 m east
+AOI01_047,Not affected,Not affected,agree,agree,high,pale building intact
+AOI01_048,Not affected,Not affected,agree,agree,high,white roof intact; no flood nearby
+AOI01_049,Not affected,Not affected,agree,agree,high,small grey roof intact among terraces
+AOI02_050,Possibly damaged,Damaged or possibly,plausible,plausible,low,small red roof intact on slope; no flood trace at building
+AOI02_051,Possibly damaged,Damaged or possibly,plausible,plausible,low,small grey roof intact in vegetation; debris field 100 m away
+AOI02_052,Possibly damaged,Damaged or possibly,unclear,plausible,low,roof intact; no flood trace in window (author: intact roof -> plausible)
+AOI02_053,Damaged,Damaged or possibly,agree,agree,high,building standing at sediment edge; mud against walls
+AOI02_054,Damaged,Damaged or possibly,agree,plausible,low,small white roof intact inside sediment field; no pre building
+AOI02_055,Possibly damaged,Damaged or possibly,plausible,unclear,low,outline on vegetation at sediment edge; no building visible
+AOI02_056,Possibly damaged,Damaged or possibly,unclear,plausible,low,roof intact; no flood trace in window (author: intact roof -> plausible)
+AOI02_057,Damaged,Damaged or possibly,agree,unclear,low,no structure visible in post; vegetation just past sediment edge
+AOI02_058,Damaged,Damaged or possibly,agree,agree,high,building standing at sediment edge; sediment against west wall
+AOI02_059,Damaged,Damaged or possibly,agree,agree,high,dark partly collapsed roof beside debris field
+AOI02_060,Destroyed,Destroyed,unclear,unclear,high,post panel hazy/cloud-covered; building not discernible
+AOI02_061,Destroyed,Destroyed,agree,agree,high,blue-roof house gone; footprint under uniform debris
+AOI02_062,Destroyed,Destroyed,agree,agree,high,white building gone; footprint under uniform sediment
+AOI02_063,Destroyed,Destroyed,agree,agree,high,footprint under uniform boulder/debris field
+AOI02_064,Destroyed,Destroyed,agree,agree,high,red-roof house gone; footprint under uniform sediment
+AOI02_065,Destroyed,Destroyed,agree,agree,high,footprint under uniform rocky debris; no structure
+AOI02_066,Destroyed,Destroyed,agree,agree,high,footprint under uniform debris; whole hamlet buried
+AOI02_067,Destroyed,Destroyed,agree,agree,high,grey-roof house gone; sediment with rubble traces
+AOI02_068,Destroyed,Destroyed,agree,agree,high,footprint under uniform sand; all yard buildings gone
+AOI02_069,Destroyed,Destroyed,agree,agree,high,footprint under uniform sediment; village buried
+AOI02_070,Destroyed,Destroyed,agree,agree,high,footprint under uniform sediment; village buried
+AOI02_071,Destroyed,Destroyed,agree,agree,high,point in yard now uniform boulder debris field
+AOI02_072,Destroyed,Destroyed,agree,agree,high,footprint under uniform debris on slope; no structure
+AOI02_073,Destroyed,Destroyed,agree,agree,high,container yard under uniform debris; nothing left
+AOI02_074,Destroyed,Destroyed,agree,agree,high,footprint under uniform debris; hamlet buried
+AOI02_075,Destroyed,Destroyed,agree,agree,high,footprint under uniform sediment; whole settlement buried
+AOI02_076,Destroyed,Destroyed,agree,agree,high,footprint under uniform sediment field; building gone
+AOI02_077,Destroyed,Destroyed,agree,agree,high,site buried under sediment; small yellow patch is debris
+AOI02_078,Destroyed,Destroyed,agree,agree,high,whole village under debris field; footprint gone
+AOI02_079,Destroyed,Destroyed,unclear,unclear,high,post panel blocky green artefact; unusable
+AOI02_080,Not affected,Not affected,unclear,unclear,low,no clear building in outline; forest slope; no flood trace
+AOI02_081,Not affected,Not affected,agree,agree,high,white roof intact; no flood trace nearby
+AOI02_082,Not affected,Not affected,agree,agree,high,building intact with new red roof; no flood trace
+AOI02_083,Not affected,Not affected,agree,agree,high,white roof intact; outline slightly offset from building
+AOI02_084,Not affected,Not affected,agree,agree,high,small white roof visible and intact; no flood trace
+AOI02_085,Not affected,Not affected,agree,unclear,low,outline on trees; no building visible; sediment ends nearby
+AOI02_086,Not affected,Not affected,agree,agree,high,large red roof intact; sediment field to west
+AOI02_087,Not affected,Not affected,agree,unclear,low,outline on forest; no building visible; vegetation intact
+AOI02_088,Not affected,Not affected,agree,agree,low,small dark structure unchanged; no flood trace
+AOI02_089,Not affected,Not affected,agree,agree,low,small hut visible and unchanged; no flood trace
+AOI02_090,Not affected,Not affected,agree,unclear,low,no building visible in outline; vegetation intact at sediment edge
+AOI02_091,Not affected,Not affected,agree,unclear,low,outline on trees; no building visible; vegetation intact
+AOI02_092,Not affected,Not affected,agree,agree,low,small hut at outline edge unchanged; no flood trace
+AOI02_093,Not affected,Not affected,agree,agree,high,white roof intact; sediment 30 m west
+AOI02_094,Not affected,Not affected,agree,unclear,low,outline on trees at sediment edge; no building visible
+AOI02_095,Not affected,Not affected,agree,agree,high,large red roof intact; sediment field to west
+AOI02_096,Not affected,Not affected,agree,unclear,low,outline on vegetation; no building visible; no flood trace
+AOI02_097,Not affected,Not affected,agree,agree,low,small light structure at outline unchanged; no flood trace
+AOI02_098,Not affected,Not affected,agree,agree,low,building standing at sediment edge; roof looks disturbed
+AOI02_099,Not affected,Not affected,agree,agree,high,white roof intact; sediment well to west
+AOI03_100,Damaged,Damaged or possibly,agree,plausible,low,roof present but dull; sediment fills surrounding lanes
+AOI03_101,Possibly damaged,Damaged or possibly,plausible,plausible,low,roof intact; sediment only on terraces below road
+AOI03_102,Possibly damaged,Damaged or possibly,unclear,unclear,high,outline on orchard edge; no building visible pre or post
+AOI03_103,Damaged,Damaged or possibly,agree,agree,high,standing with roof; sediment field to the walls
+AOI03_104,Possibly damaged,Damaged or possibly,plausible,plausible,low,roof intact; no flood trace in window (author: intact roof -> plausible)
+AOI03_105,Possibly damaged,Damaged or possibly,unclear,unclear,high,point on solar/greenhouse rows; no building
+AOI03_106,Possibly damaged,Damaged or possibly,unclear,plausible,low,red roof intact; grass around; sediment 60 m away
+AOI03_107,Damaged,Damaged or possibly,unclear,plausible,low,solar array rows intact; sediment at western edge
+AOI03_108,Damaged,Damaged or possibly,agree,agree,high,standing; roof darkened; sediment to walls
+AOI03_109,Possibly damaged,Damaged or possibly,unclear,plausible,low,roof intact; grass around; debris field 80 m below
+AOI03_110,Destroyed,Destroyed,agree,agree,high,whole village gone; uniform sand field
+AOI03_111,Destroyed,Destroyed,agree,agree,high,building gone; sand bank at river edge
+AOI03_112,Destroyed,Destroyed,agree,agree,high,building gone; sediment field at river bank
+AOI03_113,Destroyed,Destroyed,agree,unclear,low,village buried; dark block with shadow at footprint may be a standing storey
+AOI03_114,Destroyed,Destroyed,agree,agree,high,footprint under boulder field at river edge
+AOI03_115,Destroyed,Destroyed,agree,agree,low,point on bare ground pre; post debris field; neighbours gone
+AOI03_116,Destroyed,Destroyed,agree,agree,high,footprint under boulder field; green-cast post
+AOI03_117,Destroyed,Destroyed,agree,agree,high,footprint on uniform sediment; neighbours still stand
+AOI03_118,Destroyed,Destroyed,unclear,unclear,high,post panel fully cloud
+AOI03_119,Destroyed,Destroyed,unclear,unclear,high,no post image
+AOI03_120,Destroyed,Destroyed,agree,agree,low,point on sediment field; pre structure faint
+AOI03_121,Destroyed,Destroyed,agree,agree,high,footprint under uniform sand field
+AOI03_122,Destroyed,Destroyed,agree,agree,low,outline under sediment beside tree clump; pre building faint
+AOI03_123,Destroyed,Destroyed,agree,unclear,low,village buried; dark block with shadow at footprint may be a standing storey
+AOI03_124,Destroyed,Destroyed,agree,agree,high,footprint under mud; excavator on site
+AOI03_125,Destroyed,Destroyed,agree,agree,high,footprint under uniform sand field; roof gone
+AOI03_126,Destroyed,Destroyed,agree,agree,high,building gone; flat sand where it stood
+AOI03_127,Destroyed,Destroyed,agree,agree,high,white-roof shed gone; grey sediment covers footprint
+AOI03_128,Destroyed,Destroyed,agree,agree,high,blue-roof shed gone; sediment and water over site
+AOI03_129,Destroyed,Destroyed,agree,agree,low,roof gone; grey roofless remnant in sediment
+AOI03_130,Not affected,Not affected,agree,agree,low,outline under tree canopy; scene unchanged; no flood
+AOI03_131,Not affected,Not affected,agree,agree,low,post hazy but roofs still visible; no flood
+AOI03_132,Not affected,Not affected,agree,agree,high,brown roof intact; no flood trace
+AOI03_133,Not affected,Not affected,agree,agree,low,outline under canopy; unchanged; no flood nearby
+AOI03_134,Not affected,Not affected,agree,agree,high,red-brown roof intact beside road
+AOI03_135,Not affected,Not affected,agree,agree,high,red roof intact; no flood
+AOI03_136,Not affected,Not affected,agree,agree,high,light roof intact; dense village unchanged
+AOI03_137,Not affected,Not affected,agree,agree,high,roof intact; part re-roofed blue; no flood
+AOI03_138,Not affected,Not affected,agree,agree,high,grey roof intact; no flood
+AOI03_139,Not affected,Not affected,agree,agree,low,outline partly on building; intact; no flood
+AOI03_140,Not affected,Not affected,agree,agree,low,dark roof in shadow still present; no flood
+AOI03_141,Not affected,Not affected,agree,agree,high,small white structure intact; no flood
+AOI03_142,Not affected,Not affected,agree,agree,low,outline under canopy; no visible change; no flood
+AOI03_143,Not affected,Not affected,agree,agree,high,roof intact; town unchanged
+AOI03_144,Not affected,Not affected,agree,agree,high,grey roof intact beside road
+AOI03_145,Not affected,Not affected,agree,agree,high,brown roof intact; post slightly blurry
+AOI03_146,Not affected,Not affected,agree,agree,high,dark roof intact under trees
+AOI03_147,Not affected,Not affected,agree,agree,low,outline on edge of shed; intact; flood sediment far off
+AOI03_148,Not affected,Not affected,agree,agree,high,white roof intact in field
+AOI03_149,Not affected,Not affected,agree,unclear,low,outline on roadside ground; no building either date
+AOI05_150,Possibly damaged,Damaged or possibly,unclear,unclear,low,outline on small grey patch; no clear building or flood trace
+AOI05_151,Damaged,Damaged or possibly,agree,plausible,low,red roof intact; sediment on road and field adjacent
+AOI05_152,Possibly damaged,Damaged or possibly,unclear,unclear,low,outline on small grey strip; no clear structure visible
+AOI05_153,Possibly damaged,Damaged or possibly,unclear,unclear,high,outline in dense trees; no building visible
+AOI05_154,Damaged,Damaged or possibly,unclear,unclear,high,cloud and haze over the building
+AOI05_155,Damaged,Damaged or possibly,plausible,plausible,low,grey roof looks intact; sediment field abuts west side
+AOI05_156,Possibly damaged,Damaged or possibly,unclear,unclear,low,bright pale patch; building vs bare ground ambiguous
+AOI05_157,Possibly damaged,Damaged or possibly,unclear,unclear,high,haze at cloud edge over building cluster
+AOI05_158,Damaged,Damaged or possibly,agree,agree,low,footprint in debris at flood edge; no clear roof
+AOI05_159,Possibly damaged,Damaged or possibly,unclear,plausible,low,roof intact; no flood trace in window (author: intact roof -> plausible)
+AOI05_160,Destroyed,Destroyed,agree,agree,low,mostly brown sediment in footprint; faint pale remnant
+AOI05_161,Destroyed,Destroyed,unclear,agree,high,footprint under uniform sand field
+AOI05_162,Destroyed,Destroyed,disagree,disagree,high,building standing with flat roof intact; sediment around
+AOI05_163,Destroyed,Destroyed,unclear,unclear,high,thick cloud over footprint
+AOI05_164,Destroyed,Destroyed,disagree,disagree,high,"building standing, roof intact; sediment on terraces around"
+AOI05_165,Destroyed,Destroyed,disagree,disagree,high,small dark roof intact; green fields around
+AOI05_166,Destroyed,Destroyed,agree,agree,high,footprint under river water and sediment
+AOI05_167,Destroyed,Destroyed,disagree,disagree,high,pale roof intact; sediment all around
+AOI05_168,Destroyed,Destroyed,agree,agree,low,footprint under pale sediment; no roof outline
+AOI05_169,Destroyed,Destroyed,unclear,agree,high,footprint under uniform sand field
+AOI05_170,Destroyed,Destroyed,disagree,agree,low,no roof in outline; grey rubble between standing houses
+AOI05_171,Destroyed,Destroyed,agree,agree,high,footprint under mud; no structure visible
+AOI05_172,Destroyed,Destroyed,unclear,unclear,high,post image hazy with blocky artefact
+AOI05_173,Destroyed,Destroyed,agree,disagree,high,yellow roof at point still stands; grey-roof neighbour buried (point offset?)
+AOI05_174,Destroyed,Destroyed,agree,agree,high,footprint under sediment next to standing yellow roof
+AOI05_175,Destroyed,Destroyed,agree,agree,low,no building visible; footprint in uniform mud/water field; no pre
+AOI05_176,Destroyed,Destroyed,disagree,disagree,high,building standing with roof intact; sediment on terraces upslope
+AOI05_177,Destroyed,Destroyed,unclear,agree,low,outline on bare sediment between houses; no structure; no pre
+AOI05_178,Destroyed,Destroyed,unclear,disagree,low,building standing with light roof; mud around; no pre
+AOI05_179,Destroyed,Destroyed,disagree,disagree,low,"walls standing, roof stripped; destroyed vs severely damaged"
+AOI05_180,Not affected,Not affected,unclear,unclear,high,blocky grey artefact; no usable post image
+AOI05_181,Not affected,Not affected,agree,agree,high,small grey roof intact beside red house; no flood trace
+AOI05_182,Not affected,Not affected,agree,agree,high,small roadside building intact in pre and post; no flood
+AOI05_183,Not affected,Not affected,unclear,unclear,high,cloud and haze over outline
+AOI05_184,Not affected,Not affected,agree,agree,high,small orange roof intact next to blue roof; no flood
+AOI05_185,Not affected,Not affected,agree,unclear,high,outline on empty field in pre and post; no building
+AOI05_186,Not affected,Not affected,agree,agree,high,blue-roofed building intact; no flood trace
+AOI05_187,Not affected,Not affected,agree,unclear,low,outline on bare terrace; only tiny blue object in pre
+AOI05_188,Not affected,Not affected,agree,agree,high,small roof intact in hillside cluster; no flood
+AOI05_189,Not affected,Not affected,agree,agree,high,small grey building intact in cluster; no flood
+AOI05_190,Not affected,Not affected,agree,agree,high,grey roof intact beside road; no flood trace
+AOI05_191,Not affected,Not affected,agree,agree,high,small white structure present in pre and post; intact
+AOI05_192,Not affected,Not affected,agree,agree,low,small roof under trees near road; no flood trace
+AOI05_193,Not affected,Not affected,unclear,unclear,high,outline on empty green field; no building
+AOI05_194,Not affected,Not affected,agree,agree,high,small dark roof among trees in pre and post; intact
+AOI05_195,Not affected,Not affected,agree,agree,high,white roof intact in hillside cluster; no flood
+AOI05_196,Not affected,Not affected,agree,agree,low,outline on edge of blue roof; building intact; no flood
+AOI05_197,Not affected,Not affected,agree,agree,low,tiny outline on small dark shed; same in pre and post
+AOI05_198,Not affected,Not affected,agree,agree,high,small building intact in dense cluster; no flood
+AOI05_199,Not affected,Not affected,agree,unclear,high,outline on tree canopy in pre and post; no building visible

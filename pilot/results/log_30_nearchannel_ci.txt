@@ -1,0 +1,68 @@
+affected  Upper : skipped, n=205 pos=205 neg=0
+destroyed Upper : skipped, n=205 pos=205 neg=0
+
+Near-channel subset (HAND <= 30 m, distance <= 300 m): 3597 of 17503 buildings
+       affected       destroyed      
+           size   sum      size   sum
+region                               
+Lower      1084   432      1084   231
+Middle     2308  1968      2308  1629
+Upper       205   205       205   205
+
+HAND cut chosen on the training reaches (m): {'affected/Upper/HAND cut': np.float64(21.0), 'affected/Upper/HAND cut (all)': np.float64(30.8), 'affected/Middle/HAND cut': np.float64(15.7), 'affected/Middle/HAND cut (all)': np.float64(43.4), 'affected/Lower/HAND cut': np.float64(23.4), 'affected/Lower/HAND cut (all)': np.float64(55.4), 'destroyed/Upper/HAND cut': np.float64(20.8), 'destroyed/Upper/HAND cut (all)': np.float64(28.1), 'destroyed/Middle/HAND cut': np.float64(14.7), 'destroyed/Middle/HAND cut (all)': np.float64(47.4), 'destroyed/Lower/HAND cut': np.float64(22.3), 'destroyed/Lower/HAND cut (all)': np.float64(52.4)}
+
+ROC-AUC, near-channel, fixed final models and baselines
+test                                         Lower               Middle
+target    model                                                        
+affected  Gradient boosting    0.742 (0.652-0.833)  0.794 (0.680-0.885)
+          HAND cut             0.644 (0.571-0.712)  0.652 (0.617-0.706)
+          HAND cut (all)       0.500 (0.500-0.500)  0.500 (0.500-0.500)
+          HAND only            0.770 (0.674-0.838)  0.876 (0.843-0.910)
+          Linear SVM           0.792 (0.679-0.882)  0.850 (0.765-0.916)
+          Logistic regression  0.801 (0.689-0.889)  0.851 (0.765-0.920)
+          Random forest        0.756 (0.672-0.834)  0.860 (0.781-0.921)
+destroyed Gradient boosting    0.786 (0.682-0.887)  0.821 (0.747-0.883)
+          HAND cut             0.683 (0.617-0.746)  0.647 (0.614-0.692)
+          HAND cut (all)       0.500 (0.500-0.500)  0.500 (0.500-0.500)
+          HAND only            0.827 (0.757-0.897)  0.854 (0.826-0.878)
+          Linear SVM           0.783 (0.659-0.897)  0.861 (0.808-0.913)
+          Logistic regression  0.781 (0.660-0.895)  0.859 (0.806-0.911)
+          Random forest        0.755 (0.631-0.871)  0.854 (0.789-0.912)
+
+PR-AUC / prevalence
+test                           Lower  Middle
+target    model                             
+affected  Gradient boosting    0.650   0.952
+          HAND cut             0.485   0.897
+          HAND cut (all)       0.399   0.853
+          HAND only            0.725   0.975
+          Linear SVM           0.670   0.968
+          Logistic regression  0.670   0.968
+          Random forest        0.655   0.972
+destroyed Gradient boosting    0.437   0.901
+          HAND cut             0.303   0.790
+          HAND cut (all)       0.213   0.706
+          HAND only            0.580   0.929
+          Linear SVM           0.432   0.932
+          Logistic regression  0.424   0.933
+          Random forest        0.444   0.917
+test       Lower  Middle
+target                  
+affected   0.399   0.853
+destroyed  0.213   0.706
+
+Paired: logistic regression minus other model
+test                                             Lower                     Middle
+target    other                                                                  
+affected  Gradient boosting  +0.059 (-0.057 to +0.166)  +0.056 (+0.008 to +0.107)
+          HAND cut           +0.157 (+0.007 to +0.297)  +0.199 (+0.114 to +0.249)
+          HAND cut (all)     +0.301 (+0.189 to +0.389)  +0.351 (+0.265 to +0.420)
+          HAND only          +0.031 (-0.100 to +0.169)  -0.025 (-0.104 to +0.021)
+          Linear SVM         +0.009 (-0.003 to +0.021)  +0.001 (-0.005 to +0.006)
+          Random forest      +0.045 (-0.025 to +0.123)  -0.009 (-0.051 to +0.022)
+destroyed Gradient boosting  -0.004 (-0.059 to +0.057)  +0.038 (+0.003 to +0.087)
+          HAND cut           +0.098 (-0.022 to +0.224)  +0.212 (+0.155 to +0.262)
+          HAND cut (all)     +0.281 (+0.160 to +0.395)  +0.359 (+0.306 to +0.411)
+          HAND only          -0.045 (-0.154 to +0.064)  +0.006 (-0.043 to +0.051)
+          Linear SVM         -0.002 (-0.008 to +0.006)  -0.001 (-0.005 to +0.002)
+          Random forest      +0.026 (-0.012 to +0.058)  +0.005 (-0.018 to +0.033)

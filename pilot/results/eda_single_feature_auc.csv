@@ -1,0 +1,13 @@
+feature,affected,affected dir,destroyed,destroyed dir,affected near-channel,affected near-channel dir,destroyed | affected,destroyed | affected dir
+hand,0.933,-,0.935,-,0.758,-,0.709,-
+dist,0.914,-,0.915,-,0.763,-,0.676,-
+logd,0.716,-,0.766,-,0.797,-,0.684,-
+slope,0.651,+,0.62,+,0.551,+,0.59,-
+relief,0.627,+,0.641,+,0.698,+,0.569,+
+curv_profile,0.657,-,0.669,-,0.585,-,0.576,-
+curv_plan,0.528,-,0.532,-,0.518,+,0.519,-
+twi,0.55,-,0.529,-,0.523,-,0.56,+
+log_valley_w20,0.508,-,0.504,-,0.644,-,0.518,+
+chan_slope,0.654,+,0.701,+,0.708,+,0.661,+
+log_spi,0.639,+,0.684,+,0.675,+,0.652,+
+bend,0.59,-,0.553,-,0.567,+,0.597,+

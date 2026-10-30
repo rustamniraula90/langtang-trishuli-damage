@@ -1,0 +1,85 @@
+target,test,feature,auc_drop
+affected,Upper,hand,0.43417639739663094
+affected,Upper,dist,0.00023489344053093664
+affected,Upper,slope,-0.0004299068402245476
+affected,Upper,relief,-0.00042910923940779887
+affected,Upper,curv_profile,-0.0002943147013782399
+affected,Upper,curv_plan,-0.0006835438999489129
+affected,Upper,twi,0.00027517228177643683
+affected,Upper,log_valley_w20,-0.0009846382082694838
+affected,Upper,chan_slope,0.0118320093159776
+affected,Upper,bend,0.0007812500000000444
+affected,Middle,hand,0.29458267038488883
+affected,Middle,dist,0.02683319089011237
+affected,Middle,slope,0.0006038927864562172
+affected,Middle,relief,-0.0012203119632926307
+affected,Middle,curv_profile,-4.689532290986786e-05
+affected,Middle,curv_plan,0.00069527645546964
+affected,Middle,twi,0.00038920843042922204
+affected,Middle,log_valley_w20,-0.0013239327360922704
+affected,Middle,chan_slope,-0.0011028250942358264
+affected,Middle,bend,-0.00018745490429243893
+affected,Lower,hand,0.39141090716669974
+affected,Lower,dist,0.03616713730761615
+affected,Lower,slope,0.0222652145345295
+affected,Lower,relief,0.006243213115083057
+affected,Lower,curv_profile,-2.266474732097734e-05
+affected,Lower,curv_plan,0.0038622390889461846
+affected,Lower,twi,0.0016281313715213242
+affected,Lower,log_valley_w20,0.0018952023463499556
+affected,Lower,chan_slope,-0.003425339250201198
+affected,Lower,bend,-5.899730907064082e-05
+"affected (RF, attenuation)",Upper,hand,0.07541116322103114
+"affected (RF, attenuation)",Upper,dist,0.018773130423685558
+"affected (RF, attenuation)",Upper,slope,-0.004264372766717717
+"affected (RF, attenuation)",Upper,relief,0.00037646758550279323
+"affected (RF, attenuation)",Upper,curv_profile,0.004492087799897915
+"affected (RF, attenuation)",Upper,curv_plan,-0.0008753668963757177
+"affected (RF, attenuation)",Upper,twi,-0.0015756604134762654
+"affected (RF, attenuation)",Upper,logd,0.0
+"affected (RF, attenuation)",Upper,hand_x_logd,0.2595620373915263
+"affected (RF, attenuation)",Middle,hand,0.02433824849044357
+"affected (RF, attenuation)",Middle,dist,0.037296257277453705
+"affected (RF, attenuation)",Middle,slope,-2.2544694076620518e-05
+"affected (RF, attenuation)",Middle,relief,0.000685137381641876
+"affected (RF, attenuation)",Middle,curv_profile,0.001510050743115543
+"affected (RF, attenuation)",Middle,curv_plan,9.387490405102784e-05
+"affected (RF, attenuation)",Middle,twi,-3.667479945830276e-05
+"affected (RF, attenuation)",Middle,logd,1.8480638722895294e-06
+"affected (RF, attenuation)",Middle,hand_x_logd,0.0837679887812974
+"affected (RF, attenuation)",Lower,hand,0.012561379772136238
+"affected (RF, attenuation)",Lower,dist,0.02405251638256839
+"affected (RF, attenuation)",Lower,slope,0.010551380323864535
+"affected (RF, attenuation)",Lower,relief,0.005285729422415797
+"affected (RF, attenuation)",Lower,curv_profile,0.00010503213817284474
+"affected (RF, attenuation)",Lower,curv_plan,0.0004286709367092967
+"affected (RF, attenuation)",Lower,twi,0.0001580419413813594
+"affected (RF, attenuation)",Lower,logd,4.780600230225307e-06
+"affected (RF, attenuation)",Lower,hand_x_logd,0.18690789523181367
+destroyed | affected,Upper,hand,0.28414837454848574
+destroyed | affected,Upper,dist,0.00031027137167731754
+destroyed | affected,Upper,slope,-0.004495075792658421
+destroyed | affected,Upper,relief,-0.00010882652588681819
+destroyed | affected,Upper,curv_profile,-0.0002793985983761238
+destroyed | affected,Upper,curv_plan,0.0010465870149115486
+destroyed | affected,Upper,twi,-0.0008767867617548109
+destroyed | affected,Upper,logd,0.13976027291531595
+destroyed | affected,Upper,hand_x_logd,0.01149547713871133
+destroyed | affected,Middle,hand,0.25094898782621666
+destroyed | affected,Middle,dist,-0.006394099270531806
+destroyed | affected,Middle,slope,-0.00042219405079914064
+destroyed | affected,Middle,relief,-0.006936872634687952
+destroyed | affected,Middle,curv_profile,-0.008859150578327946
+destroyed | affected,Middle,curv_plan,-0.00031952519315330273
+destroyed | affected,Middle,twi,0.00048438128364036714
+destroyed | affected,Middle,logd,0.060703061955528756
+destroyed | affected,Middle,hand_x_logd,0.03569021170291812
+destroyed | affected,Lower,hand,0.07201187129022184
+destroyed | affected,Lower,dist,0.0034432989690722504
+destroyed | affected,Lower,slope,0.002211184004998512
+destroyed | affected,Lower,relief,-0.007383317713214588
+destroyed | affected,Lower,curv_profile,0.010144954701655773
+destroyed | affected,Lower,curv_plan,0.009340206185567034
+destroyed | affected,Lower,twi,0.0006179318962824421
+destroyed | affected,Lower,logd,0.014490471727585186
+destroyed | affected,Lower,hand_x_logd,0.0971365198375508

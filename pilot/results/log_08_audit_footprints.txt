@@ -1,0 +1,41 @@
+== 1. EMS inventory (summary tables) vs our table ==
+  aoi  ems_affected  ems_no_visible_damage  ems_total  our_footprints  our_affected  our_not_affected  our_not_affected_clean  footprints_minus_ems_total
+AOI01         433.0                  126.0      559.0             556           324               287                     176                        -3.0
+AOI02         431.0                   10.0      441.0             626           329               327                      22                       185.0
+AOI03        2343.0                 9064.0    11407.0           10818          2141              8968                    8377                      -589.0
+AOI05         609.0                 3893.0     4502.0            6492           566              5966                    5691                      1990.0
+  aoi                       post_event_imagery
+AOI01                        WorldView-3 0.3 m
+AOI02                             Legion 0.3 m
+AOI03                   ALOS 1.0 m; ALOS 0.8 m
+AOI05 Pleiades-1A-1B 0.5 m; Pleiades Neo 0.3 m
+
+== 2. Possible duplicate footprints ==
+overlapping pairs (overlap >= 50% of smaller footprint): 1; mixed-label pairs (one affected, one not): 0
+centroids < 8 m apart, different sources: 1397 footprints; of which one affected and one not: 124
+aoi
+AOI01     40
+AOI02     52
+AOI03    785
+AOI05    520
+
+== 3. Footprint size (m2) by source ==
+size_class              <10  10-20  20-40  40-80  80-160  >160
+source                                                        
+Google Open Buildings     0   1086   1658   1467     840   201
+Microsoft ML Buildings    0    353    940    649     260    71
+OpenStreetMap           144    598   2355   3965    2910   995
+
+Median footprint (m2) by label: {'affected': 58.0, 'not affected': 52.0, 'unlabelled in event': 31.0}
+Match rate of EMS points by footprint source (affected footprints / all footprints):
+source
+Google Open Buildings     0.124
+Microsoft ML Buildings    0.077
+OpenStreetMap             0.193
+
+== 4. Label plausibility ==
+AOI01: destroyed n=239, HAND median 28.8 m, 90th pct 46.3 m, share > 60 m: 0.8%; inside observed-event polygon: 100.0%
+AOI02: destroyed n=292, HAND median 41.6 m, 90th pct 55.2 m, share > 60 m: 8.2%; inside observed-event polygon: 100.0%
+AOI03: destroyed n=1699, HAND median 17.9 m, 90th pct 25.8 m, share > 60 m: 0.0%; inside observed-event polygon: 99.2%
+AOI05: destroyed n=275, HAND median 14.2 m, 90th pct 22.3 m, share > 60 m: 0.0%; inside observed-event polygon: 97.5%
+destroyed buildings with HAND > 60 m written for visual check: 26

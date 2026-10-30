@@ -1,0 +1,111 @@
+task,test,variant,auc
+affected (all),Upper,base,0.9618507529351711
+affected (all),Upper,linear,0.9660222052067382
+affected (all),Upper,log(c=5),0.9673701505870342
+affected (all),Upper,log(c=10),0.97024151352731
+affected (all),Upper,log(c=20),0.9706722179683512
+affected (all),Upper,log(c=40),0.9698267611026034
+affected (all),Upper,norm(c=5),0.9528936957631445
+affected (all),Upper,norm(c=10),0.9526863195507911
+affected (all),Upper,norm(c=20),0.9527581036242981
+affected (all),Upper,norm(c=40),0.9532685681470138
+affected (all),Middle,base,0.9794276787727957
+affected (all),Middle,linear,0.9876803231471685
+affected (all),Middle,log(c=5),0.9891955670059371
+affected (all),Middle,log(c=10),0.9891269246335399
+affected (all),Middle,log(c=20),0.9889751474729693
+affected (all),Middle,log(c=40),0.9887049032392516
+affected (all),Middle,norm(c=5),0.9853812530490949
+affected (all),Middle,norm(c=10),0.984450255765861
+affected (all),Middle,norm(c=20),0.9832863687314333
+affected (all),Middle,norm(c=40),0.9819922746436369
+affected (all),Lower,base,0.9469469362778906
+affected (all),Lower,linear,0.9407368582083377
+affected (all),Lower,log(c=5),0.9479337775582011
+affected (all),Lower,log(c=10),0.945841598808267
+affected (all),Lower,log(c=20),0.9426807599806395
+affected (all),Lower,log(c=40),0.9378079960476191
+affected (all),Lower,norm(c=5),0.916691222755281
+affected (all),Lower,norm(c=10),0.9038945747554213
+affected (all),Lower,norm(c=20),0.880668381204122
+affected (all),Lower,norm(c=40),0.8396784176432677
+destroyed (all),Upper,base,0.9310668489930068
+destroyed (all),Upper,linear,0.9504030371729821
+destroyed (all),Upper,log(c=5),0.9446393656962587
+destroyed (all),Upper,log(c=10),0.9573782191994434
+destroyed (all),Upper,log(c=20),0.9625001499394245
+destroyed (all),Upper,log(c=40),0.9603830052658726
+destroyed (all),Upper,norm(c=5),0.9091577002890833
+destroyed (all),Upper,norm(c=10),0.9120365372389554
+destroyed (all),Upper,norm(c=20),0.9162948168939749
+destroyed (all),Upper,norm(c=40),0.9178961699473412
+destroyed (all),Middle,base,0.9786718006407118
+destroyed (all),Middle,linear,0.9890679233288724
+destroyed (all),Middle,log(c=5),0.9890499775408799
+destroyed (all),Middle,log(c=10),0.9890458775668441
+destroyed (all),Middle,log(c=20),0.9890474906713829
+destroyed (all),Middle,log(c=40),0.988974632116387
+destroyed (all),Middle,norm(c=5),0.988201215702793
+destroyed (all),Middle,norm(c=10),0.9880084497104242
+destroyed (all),Middle,norm(c=20),0.9876385110695601
+destroyed (all),Middle,norm(c=40),0.9870276149382353
+destroyed (all),Lower,base,0.932572050861236
+destroyed (all),Lower,linear,0.9650747733791432
+destroyed (all),Lower,log(c=5),0.9665588907465068
+destroyed (all),Lower,log(c=10),0.9667441753454914
+destroyed (all),Lower,log(c=20),0.9658852401184104
+destroyed (all),Lower,log(c=40),0.9640066260717518
+destroyed (all),Lower,norm(c=5),0.9635691826311026
+destroyed (all),Lower,norm(c=10),0.9598591959752749
+destroyed (all),Lower,norm(c=20),0.9516717026857063
+destroyed (all),Lower,norm(c=40),0.9352948755310827
+affected (near-channel),Middle,base,0.8839819464371115
+affected (near-channel),Middle,linear,0.8912123385939742
+affected (near-channel),Middle,log(c=5),0.8976028216164514
+affected (near-channel),Middle,log(c=10),0.8975564921090387
+affected (near-channel),Middle,log(c=20),0.897447393591583
+affected (near-channel),Middle,log(c=40),0.8972874820659971
+affected (near-channel),Middle,norm(c=5),0.7689158895265423
+affected (near-channel),Middle,norm(c=10),0.7687574725011956
+affected (near-channel),Middle,norm(c=20),0.7686364179818268
+affected (near-channel),Middle,norm(c=40),0.7684406384505023
+affected (near-channel),Lower,base,0.8294545983867304
+affected (near-channel),Lower,linear,0.6584352277891388
+affected (near-channel),Lower,log(c=5),0.723147083049307
+affected (near-channel),Lower,log(c=10),0.7180346086116791
+affected (near-channel),Lower,log(c=20),0.7102700380595319
+affected (near-channel),Lower,log(c=40),0.7007977590320382
+affected (near-channel),Lower,norm(c=5),0.7353992700522609
+affected (near-channel),Lower,norm(c=10),0.7318063366280391
+affected (near-channel),Lower,norm(c=20),0.7276098471938196
+affected (near-channel),Lower,norm(c=40),0.7197813707112019
+destroyed | affected,Upper,base,0.8679494303973326
+destroyed | affected,Upper,linear,0.9011530980828009
+destroyed | affected,Upper,log(c=5),0.9139961717761107
+destroyed | affected,Upper,log(c=10),0.9307446512920255
+destroyed | affected,Upper,log(c=20),0.9354681856071131
+destroyed | affected,Upper,log(c=40),0.931207742891544
+destroyed | affected,Upper,norm(c=5),0.9044101756660801
+destroyed | affected,Upper,norm(c=10),0.9011067889228489
+destroyed | affected,Upper,norm(c=20),0.895997344941496
+destroyed | affected,Upper,norm(c=40),0.8914899200395172
+destroyed | affected,Middle,base,0.8182008847365632
+destroyed | affected,Middle,linear,0.812481523600521
+destroyed | affected,Middle,log(c=5),0.8343895397612118
+destroyed | affected,Middle,log(c=10),0.8303427089131482
+destroyed | affected,Middle,log(c=20),0.8247445263250408
+destroyed | affected,Middle,log(c=40),0.8170809818924627
+destroyed | affected,Middle,norm(c=5),0.8538833063899711
+destroyed | affected,Middle,norm(c=10),0.8526621994838594
+destroyed | affected,Middle,norm(c=20),0.8511294905973436
+destroyed | affected,Middle,norm(c=40),0.8501587305814705
+destroyed | affected,Lower,base,0.5745579506404248
+destroyed | affected,Lower,linear,0.766098094345517
+destroyed | affected,Lower,log(c=5),0.7324461105904405
+destroyed | affected,Lower,log(c=10),0.7415807560137457
+destroyed | affected,Lower,log(c=20),0.7494907841299594
+destroyed | affected,Lower,log(c=40),0.756388628553577
+destroyed | affected,Lower,norm(c=5),0.7573883161512027
+destroyed | affected,Lower,norm(c=10),0.7631240237425805
+destroyed | affected,Lower,norm(c=20),0.7676975945017182
+destroyed | affected,Lower,norm(c=40),0.7716963448922212
