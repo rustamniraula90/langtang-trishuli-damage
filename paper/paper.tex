@@ -10,6 +10,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,fit,calc,backgrounds}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{array}
@@ -210,6 +212,66 @@ R3: ungraded twins $<$ 8\,m from an affected footprint & 17,503 & 17\\
 \paragraph{Elevation model} GLO-30 is a surface model and includes canopy. FABDEM, which removes forests and buildings, gives HAND about 1.5\,m lower on average, but model AUCs change by less than 0.002 (Section~\ref{sec:sens}). GLO-30 is therefore kept as the main DEM. The terrain of the valley sides changes little over a decade, so the age of the radar acquisitions behind GLO-30 is less important than its resolution.
 
 \section{Methods}\label{sec:methods}
+Fig.~\ref{fig:workflow} summarises the pipeline. Four open inputs are reduced to one building table with ten terrain features and three binary targets; every experiment of Section~\ref{sec:design} reads that table, and all but the attenuation curve and the regime analysis score it under the leave-one-reach-out protocol described below.
+
+\begin{figure*}[!t]
+\centering
+\begin{tikzpicture}[
+  font=\scriptsize,
+  box/.style={draw, rounded corners=1.5pt, align=left, text width=2.8cm, inner sep=3pt, fill=white},
+  src/.style={box, fill=gray!12},
+  arr/.style={-{Latex[length=1.6mm]}, semithick, black!65},
+  grp/.style={draw, dashed, rounded corners=3pt, inner sep=4pt, black!50},
+  hd/.style={font=\scriptsize\bfseries, anchor=south, black!70},
+  node distance=3mm
+]
+\node[src, anchor=north] (ems) at (0,0) {Copernicus EMSR927 damage grades (four mapping areas, post-event)};
+\node[src, below=of ems] (ov) {Overture building footprints (release of 19 Aug 2026, pre-event)};
+\node[src, below=of ov] (dem) {Copernicus GLO-30 elevation model (30\,m, surface model)};
+\node[src, below=of dem, dashed] (lc) {FRTC/ICIMOD NLCMS 2022 land cover (error check of E9 only)};
+\node[box, anchor=north] (join) at (3.5,0) {Join: each graded point to the nearest pre-event footprint; footprints without a graded point are not affected};
+\node[box, below=of join] (clean) {Cleaning R1--R3: 18,908 $\rightarrow$ 17,503 buildings; label audit of 200 buildings on 0.2\,m imagery};
+\node[box, below=of clean] (terr) {Mosaic, UTM 45N, pit filling, D8 flow directions (pysheds); flood path traced downstream from the border};
+\node[box, anchor=north] (targets) at (7,0) {Three targets: affected (primary); destroyed; destroyed $\mid$ affected (among the 3,360 affected buildings)};
+\node[src, below=of targets] (table) {\textbf{Building table}: 17,503 buildings in three reaches (upper / middle / lower; 77\,\% / 41\,\% / 9\,\% affected)};
+\node[box, below=of table] (feat) {Ten terrain features read at each centroid: core (HAND, distance), local, valley geometry; the attenuation set swaps geometry for $\log(d+10)$ and HAND$\times\log(d+10)$};
+\node[box, anchor=north] (loro) at (10.5,0) {Leave-one-reach-out: train on two reaches, test on the third};
+\node[box, below=of loro] (inner) {Inner 3-fold CV on 1-km blocks: grid search on ROC-AUC, threshold by Youden's $J$; kNNDM folds as a comparison};
+\node[box, below=of inner] (learn) {Nine classical learners; class weights, SMOTE, ISMOTE; a fixed logistic regression as reference};
+\node[box, below=of learn] (unc) {95\,\% intervals from 1,000 block-bootstrap resamples; area of applicability; calibration};
+\node[box, below=of unc, dashed] (allb) {Fits on all buildings, no held-out split: E5 bins, E9 regimes and interpretation};
+\node[box, anchor=north] (e1) at (14,0) {E1--E4, E6, E7: transfer AUC, near-channel test, learner comparison, feature groups, calibration, imbalance};
+\node[box, below=of e1] (e8) {E8: sensitivity to the elevation model, cleaning rules and labels};
+\node[box, below=of e8] (e5) {E5: attenuation curve, HAND$_{50}$ against distance in 3-km bins};
+\node[box, below=of e5] (e9) {E9: damage regimes (K-means, Ward), coefficients, partial dependence, error map};
+\begin{scope}[on background layer]
+\node[grp, fit=(ems)(lc)] (g1) {};
+\node[grp, fit=(join)(terr)(targets)(feat)] (g2) {};
+\node[grp, fit=(loro)(allb)] (g3) {};
+\node[grp, fit=(e1)(e9)] (g4) {};
+\end{scope}
+\node[hd] at (g1.north) {Inputs};
+\node[hd] at (g2.north) {Building table};
+\node[hd] at (g3.north) {Evaluation};
+\node[hd] at (g4.north) {Experiments};
+\draw[arr] (ems.east) -- (join.west |- ems.east);
+\draw[arr] (ov.east) -- (join.west |- ov.east);
+\draw[arr] (dem.east) -- (terr.west |- dem.east);
+\draw[arr] (join) -- (clean);
+\draw[arr] (clean.east) -- (table.west |- clean.east);
+\draw[arr] (clean.east) -- (targets.west |- targets.center);
+\draw[arr] (terr.east) -- (feat.west |- terr.east);
+\draw[arr] (targets) -- (table);
+\draw[arr] (feat) -- (table);
+\draw[arr] (table.east) -- (g3.west |- table.east);
+\draw[arr] (g3.east |- e1) -- (e1.west);
+\draw[arr] (g3.east |- e8) -- (e8.west);
+\draw[arr] (g3.east |- e5) -- (e5.west);
+\draw[arr] (g3.east |- e9) -- (e9.west);
+\end{tikzpicture}
+\caption{Workflow. Four open inputs (left; Table~\ref{tab:data}) are joined into one building table of 17,503 pre-event footprints with ten terrain features and three binary targets. The evaluation protocol (Section~\ref{sec:methods}) holds out one reach at a time and tunes within 1-km spatial blocks; the experiments are listed in Table~\ref{tab:design}. E1--E4 and E6--E8 are scored under that protocol; E5 fits the attenuation curve on all buildings in 3-km bins, and E9 fits the regime and interpretation models on all buildings, with permutation importance on the held-out reach. The land-cover layer enters only the error check of E9. E0, the exploratory analysis that fixed the feature set, is not drawn.}
+\label{fig:workflow}
+\end{figure*}
 
 \subsection{Terrain features}
 The GLO-30 tiles were mosaicked and reprojected to UTM zone 45N at 30\,m. Pits and depressions were filled and flats resolved before D8 flow directions were computed with pysheds. The flood path was traced downstream along D8 flow directions from the border, so tributaries the flood did not follow are excluded. HAND, distance and along-river distance are measured to this path. Ten features form the \emph{main} set (Table~\ref{tab:features}). Stream-power index was dropped because it correlates with channel slope at $\rho = 0.99$. An \emph{attenuation} set replaces the valley-geometry group with $\log(d + 10\,\mathrm{km})$, where $d$ is distance along the river, and its product with HAND.
