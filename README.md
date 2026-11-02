@@ -27,12 +27,12 @@ Citation details are in `CITATION.cff`.
 
 Key result files in `pilot/results/`:
 
-- `final_auc_ci.csv`, `final_paired.csv`: held-out ROC-AUC with block-bootstrap intervals (Table VIII of the paper).
-- `nearchannel_ci.csv`, `nearchannel_paired.csv`: the near-channel headline test and the HAND-only / HAND-cut baselines (Table IX).
-- `scores.csv`, `best_params.csv`, `optimism_gap.csv`, `knndm_gap.csv`: nine-learner comparison and inner-vs-held-out gaps (Table X).
-- `ablation_preview.csv`: feature-group ablation (Table XI).
-- `attenuation_bins.csv`, `attenuation_fit.csv`, `attenuation_boot.csv`: the attenuation curve and its three bootstrap schemes (Table XII).
-- `calibration.csv`, `recalibration.csv`, `damaged_share_*.csv`: calibration, intercept-only recalibration, affected share (Tables XIII–XV).
+- `final_auc_ci.csv`, `final_paired.csv`: held-out ROC-AUC with block-bootstrap intervals (Table IX of the paper).
+- `nearchannel_ci.csv`, `nearchannel_paired.csv`: the near-channel headline test and the HAND-only / HAND-cut baselines (Table X).
+- `scores.csv`, `best_params.csv`, `optimism_gap.csv`, `knndm_gap.csv`: nine-learner comparison and inner-vs-held-out gaps (Table XI).
+- `ablation_preview.csv`: feature-group ablation (Table XII).
+- `attenuation_bins.csv`, `attenuation_fit.csv`, `attenuation_boot.csv`: the attenuation curve and its three bootstrap schemes (Table XIII).
+- `calibration.csv`, `recalibration.csv`, `damaged_share_*.csv`: calibration, intercept-only recalibration, affected share (Tables XIV–XVI).
 - `predictions_loro.csv`: per-building held-out predictions of the four final models.
 - `cleaning_log.csv`: the three cleaning rules (Table V).
 

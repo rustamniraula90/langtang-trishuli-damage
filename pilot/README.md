@@ -43,7 +43,7 @@ Or simply `bash run_all.sh`: steps 01-30 in order (+ the WorldCover variant of 2
 1. Snap the border point. Rasuwagadhi (85.378 E, 28.276 N) is snapped to the nearest river draining ≥ 500 km². It lands on the Bhote Koshi, at 3,044 km² drainage.
 2. Trace downstream along the D8 flow directions to the edge of the DEM.
 3. Trace 15 km upstream along the main stem, always stepping to the inflowing cell with the largest accumulation.
-4. Result: 3,353 cells, from 15 km upstream to 103 km downstream of the border. It follows the Bhote Koshi–Trishuli through all four areas and excludes tributaries such as the Tadi Khola (see `../proposal/figures/study_area.png`).
+4. Result: 3,353 cells, from 15 km upstream to 103 km downstream of the border. It follows the Bhote Koshi–Trishuli through all four areas and excludes tributaries such as the Tadi Khola (see `../proposal/figures/study_area.png`). The 15 km upstream extension only gives HAND and distance a defined value for buildings close to the border; along-river distance is measured from the border (negative upstream) and no analysed building lies above it, so the study area in the paper starts at the border.
 5. Features measured to the path:
    - `hand` (via `compute_hand`)
    - `dist` (Euclidean distance)
@@ -100,7 +100,7 @@ Attenuation curve (`results/fig_attenuation_curve.png`; all data, descriptive):
 3. The `in_event` flag is post-event information, so it is used only for cleaning and never as a feature.
 4. AOI01 and AOI02 are merged as "Upper". Each alone has too few undamaged buildings (Timure has 22 after cleaning).
 
-Final table: 17,626 buildings:
+Table after rule R1 (R2 and R3 later bring it to 17,503, the count used in the paper): 17,626 buildings:
 
 | Region | Not affected | Possibly damaged | Damaged | Destroyed |
 |---|---|---|---|---|
