@@ -23,7 +23,6 @@ Citation details are in `CITATION.cff`.
 | `pilot/results/` | All result tables (`*.csv`), run logs (`log_*.txt`) and figures (`*.png`). Key files below. |
 | `pilot/results/audit/` | Visual label audit: sample (`label_audit.csv`, 200 rows with the final `judgement` column), summary, review record (`REVIEW.md`), contact sheets and 80-m chips. HD chips (0.2 m/px, 390 MB) are not included; `image_urls.csv` lists the source images and `29_hd_chips.py` rebuilds them. |
 | `paper/` | `paper.tex`, `refs.bib`, figures, `IEEEtran.cls`/`IEEEtranN.bst`, and the compiled `paper.pdf`. |
-| `docs/` | Research plan and the four weekly reports. |
 
 The result files behind the paper's tables, in `pilot/results/`:
 
