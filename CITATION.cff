@@ -9,6 +9,9 @@ authors:
 doi: 10.5281/zenodo.23802508
 identifiers:
   - type: doi
+    value: 10.5281/zenodo.23955512
+    description: "Zenodo archive of release v1.1.1"
+  - type: doi
     value: 10.5281/zenodo.23955483
     description: "Zenodo archive of release v1.1.0"
   - type: doi
