@@ -19,7 +19,7 @@ The environment is pinned (Python 3.12.16). Steps, in order:
 - `.venv/bin/python 05_map.py`: study-area map (with traced flood path) for the proposal
 - `.venv/bin/python 06_hard_checks.py`: near-channel subset; destroyed vs damaged among affected
 - `.venv/bin/python 07_log_attenuation.py`: linear vs log vs normalised-HAND attenuation; attenuation-curve figure
-- Later steps: see STEPS in run_all.sh (needs imbalanced-learn). Week 4 add-ons (2026-10-02):
+- Later steps: see STEPS in run_all.sh (needs imbalanced-learn). Validation add-ons (2026-10-02):
 - `.venv/bin/python 23_ismote.py`: ISMOTE (Song & Liu 2024) vs SMOTE / class weights / none
 - `.venv/bin/python 24_knndm.py`: kNNDM vs 1-km block vs random inner CV: optimism gap (helpers in spatial_tools.py)
 - `.venv/bin/python 25_aoa.py`: area of applicability; AUC inside vs outside (needs 20_final_eval output)
