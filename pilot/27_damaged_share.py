@@ -55,7 +55,6 @@ def main():
         lp = logit(np.clip(m.predict_proba(te[MAIN])[:, 1], 1e-12, 1 - 1e-12))
         te["raw"] = expit(lp)
         y = te["affected"].to_numpy()
-
         recal, count = np.zeros(len(te)), np.zeros(len(te))
         for _ in range(REPEATS):
             idx = rng.choice(len(te), K, replace=False)

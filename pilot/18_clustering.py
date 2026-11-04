@@ -20,6 +20,9 @@ from clean import load_clean
 
 SEED = 42
 FEATS = ["hand", "dist", "slope", "relief", "curv_profile", "curv_plan", "twi", "log_valley_w20", "chan_slope", "bend"]
+PRETTY = {"hand": "HAND (m)", "dist": "distance to path (m)", "slope": "slope (deg)", "relief": "relief (m)",
+          "curv_profile": "profile curvature", "curv_plan": "plan curvature", "twi": "wetness index",
+          "log_valley_w20": "log valley width", "chan_slope": "channel slope", "bend": "bend exposure"}
 
 def main():
     df, _ = load_clean(verbose=False)
@@ -55,7 +58,7 @@ def main():
     axes[0].set_xlabel("k"); axes[0].set_ylabel("silhouette"); axes[0].set_title("Choosing k (K-means)")
     centres = pd.DataFrame(km.cluster_centers_, columns=FEATS)
     im = axes[1].imshow(centres.T, cmap="RdBu_r", vmin=-2, vmax=2, aspect="auto")
-    axes[1].set_yticks(range(len(FEATS)), FEATS, fontsize=8)
+    axes[1].set_yticks(range(len(FEATS)), [PRETTY[f] for f in FEATS], fontsize=8)
     axes[1].set_xticks(range(k_best), [f"C{i}\n{prof.loc[i, 'share_destroyed']:.0%} destr." for i in range(k_best)],
                        fontsize=8)
     axes[1].set_title("Cluster centres (standardised)")

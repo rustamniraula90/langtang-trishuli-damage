@@ -1,0 +1,83 @@
+
+6. Attenuation fit with and without the two upstream bins (log form, c fixed)
+   target  c_km                            bins  n_bins  km_min  km_max  buildings  fall_per_doubling_m   r2
+ affected     5                        all bins      18    2.55   90.61      17153                19.46 0.94
+ affected     5 downstream bins only (>= 40 km)      16   42.15   90.61      16481                16.89 0.58
+destroyed    20                        all bins      17    2.55   90.61      16741                22.99 0.93
+destroyed    20 downstream bins only (>= 40 km)      15   42.15   90.61      16069                27.56 0.79
+1. Near-channel cutoffs (held-out ROC-AUC; LR = final logistic regression, HAND = HAND alone)
+                            hand_only        logreg              n        
+test                            Lower Middle  Lower Middle   Lower  Middle
+target    hand_max dist_max                                               
+affected  20       100          0.704    NaN  0.638    NaN   103.0     NaN
+                   200          0.668    NaN  0.665    NaN   332.0     NaN
+                   300          0.701  0.742  0.719  0.883   543.0  1155.0
+          30       100          0.776    NaN  0.722    NaN   150.0     NaN
+                   200          0.767  0.889  0.758  0.864   640.0  1874.0
+                   300          0.770  0.876  0.801  0.851  1084.0  2308.0
+destroyed 10       200          0.597    NaN  0.302    NaN    71.0     NaN
+                   300          0.544    NaN  0.247    NaN    86.0     NaN
+          20       100          0.599  0.804  0.530  0.775   103.0   589.0
+                   200          0.688  0.759  0.680  0.740   332.0  1060.0
+                   300          0.719  0.719  0.674  0.770   543.0  1155.0
+          30       100          0.722  0.833  0.667  0.792   150.0   696.0
+                   200          0.795  0.849  0.763  0.842   640.0  1874.0
+                   300          0.827  0.854  0.781  0.859  1084.0  2308.0
+   range of LR AUC over all cutoffs:                     min    max
+target    test                
+affected  Lower   0.638  0.801
+          Middle  0.851  0.883
+destroyed Lower   0.247  0.781
+          Middle  0.740  0.859
+   share of cells where HAND alone >= LR: 0.78 (n cells = 23)
+
+2. Phosretar 'destroyed': audit 8/18 standing = 0.44 (Wilson 95% 0.25-0.66); 275 destroyed in the lower reach
+   q                   mode  destroyed  destroyed_pr  prevalence  destroyed_near  d_given_a
+0.00            as labelled      0.958         0.406       0.044           0.781      0.750
+0.25   random (mean of 200)      0.953         0.306       0.033           0.764      0.704
+0.25  lowest-scored recoded      0.977         0.441       0.033           0.869      0.838
+0.25 highest-scored recoded      0.935         0.201       0.033           0.655      0.591
+0.44   random (mean of 200)      0.948         0.229       0.025           0.750      0.674
+0.44  lowest-scored recoded      0.986         0.459       0.025           0.911      0.880
+0.44 highest-scored recoded      0.914         0.120       0.025           0.553      0.487
+0.66   random (mean of 200)      0.944         0.143       0.015           0.740      0.655
+0.66  lowest-scored recoded      0.991         0.446       0.015           0.949      0.891
+0.66 highest-scored recoded      0.885         0.059       0.015           0.437      0.408
+
+3. OSM-only negatives, final logistic regression (10 features)
+   target   test  n_main  prev_main  auc_main  n_osm  prev_osm  auc_main_model_on_osm_sample  auc_osm_model_on_osm_sample
+ affected  Upper     845      0.773     0.970    775     0.843                         0.970                        0.968
+ affected Middle   10456      0.205     0.983   7683     0.279                         0.984                        0.985
+ affected  Lower    6202      0.091     0.958   3122     0.181                         0.963                        0.963
+destroyed  Upper     845      0.628     0.952    775     0.685                         0.941                        0.942
+destroyed Middle   10456      0.162     0.983   7683     0.221                         0.980                        0.981
+destroyed  Lower    6202      0.044     0.958   3122     0.088                         0.946                        0.945
+   means:            auc_main  auc_main_model_on_osm_sample  auc_osm_model_on_osm_sample
+target                                                                        
+affected      0.970                         0.972                        0.972
+destroyed     0.964                         0.956                        0.956
+
+4. Recalibration from random vs one-settlement labels (affected, LR without correction; 200 repeats)
+                          ece_median  ece_p90  share_err_median  share_err_p90   extent_m
+test   k  design                                                                         
+Lower  0  none                 0.074    0.074             7.435          7.435        NaN
+       20 one settlement       0.065    0.075             6.500          7.435    138.958
+          random               0.030    0.068             2.797          6.826  14056.122
+       50 one settlement       0.054    0.075             5.301          7.435    301.879
+          random               0.026    0.041             2.011          4.004  14853.190
+Middle 0  none                 0.036    0.036             3.613          3.613        NaN
+       20 one settlement       0.036    0.089             3.625          8.877    108.609
+          random               0.023    0.056             2.195          5.625  12115.005
+       50 one settlement       0.037    0.078             3.645          7.749    199.746
+          random               0.016    0.038             1.449          3.814  12716.584
+Upper  0  none                 0.211    0.211            21.098         21.098        NaN
+       20 one settlement       0.094    0.216             9.281         21.099    113.841
+          random               0.048    0.108             4.294         10.594  12141.550
+       50 one settlement       0.061    0.134             5.425         12.689    221.695
+          random               0.040    0.057             2.413          5.321  12931.466
+
+5. Prevalence under three denominators; flags of the thresholded map per recorded affected building
+ reach  n_table  affected  prev_table audit_no_building  nb_share  prev_less_nb  prev_less_nb_lo  prev_less_nb_hi  ems_total  ems_affected  prev_ems  flagged  flags_per_affected
+ Upper      845       653       0.773             10/40      0.25         0.819            0.799            0.850       1000           864     0.864      577               0.884
+Middle    10456      2141       0.205              1/20      0.05         0.213            0.206            0.252      11407          2343     0.205     2519               1.177
+ Lower     6202       566       0.091              4/20      0.20         0.112            0.098            0.147       4502           609     0.135     1835               3.242

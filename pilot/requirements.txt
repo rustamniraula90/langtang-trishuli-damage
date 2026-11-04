@@ -1,3 +1,4 @@
+# Pinned environment used for every result in the paper (Python 3.12.16). Install: python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt
 affine==3.0.1
 attrs==26.1.0
 certifi==2026.7.22

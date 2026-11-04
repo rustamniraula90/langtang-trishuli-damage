@@ -121,7 +121,6 @@ def main():
     y = df["affected"].to_numpy()
     mi = mutual_info_classif(Z, y, random_state=SEED)
     rfe = RFE(LogisticRegression(class_weight="balanced", max_iter=5000), n_features_to_select=1).fit(Z, y)
-
     entry = {}
     for C in np.logspace(-4, 1, 60):
         m = LogisticRegression(penalty="l1", solver="liblinear", C=C, class_weight="balanced").fit(Z, y)

@@ -1,8 +1,8 @@
 """Week 2 - which terrain feature groups transfer to an unseen reach? (preview of the Week 4 ablation)
 
 Groups are added cumulatively; logistic regression (standardised, balanced) and random forest,
-leave-one-region-out ROC-AUC on four tasks. Untuned models: this ranks feature groups, it is not the
-final model comparison.
+leave-one-region-out ROC-AUC on four tasks. Untuned models, so this only ranks feature groups; the
+final model comparison is 15_models.py.
 """
 import numpy as np
 import pandas as pd

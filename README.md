@@ -15,7 +15,7 @@ Citation details are in `CITATION.cff`.
 
 | Path | Content |
 |---|---|
-| `pilot/*.py`, `pilot/run_all.sh` | The pipeline, steps 01–30. `run_all.sh` rebuilds every number and figure in order. |
+| `pilot/*.py`, `pilot/run_all.sh` | The pipeline, steps 01–31. `run_all.sh` rebuilds every number and figure in order. |
 | `pilot/requirements.txt` | Pinned Python environment (Python 3.12.16) used for every result in the paper. |
 | `pilot/README.md` | Step-by-step notes on the pipeline (pilot record; the paper and `results/*.csv` are authoritative where numbers differ). |
 | `pilot/data/DATA_DICTIONARY.md` | Every input and derived file, with source and licence. |
@@ -25,16 +25,17 @@ Citation details are in `CITATION.cff`.
 | `paper/` | `paper.tex`, `refs.bib`, figures, `IEEEtran.cls`/`IEEEtranN.bst`, and the compiled `paper.pdf`. |
 | `docs/` | Research plan and the four weekly reports. |
 
-Key result files in `pilot/results/`:
+The result files behind the paper's tables, in `pilot/results/`:
 
-- `final_auc_ci.csv`, `final_paired.csv`: held-out ROC-AUC with block-bootstrap intervals (Table IX of the paper).
-- `nearchannel_ci.csv`, `nearchannel_paired.csv`: the near-channel headline test and the HAND-only / HAND-cut baselines (Table X).
-- `scores.csv`, `best_params.csv`, `optimism_gap.csv`, `knndm_gap.csv`: nine-learner comparison and inner-vs-held-out gaps (Table XI).
-- `ablation_preview.csv`: feature-group ablation (Table XII).
-- `attenuation_bins.csv`, `attenuation_fit.csv`, `attenuation_boot.csv`: the attenuation curve and its three bootstrap schemes (Table XIII).
-- `calibration.csv`, `recalibration.csv`, `damaged_share_*.csv`: calibration, intercept-only recalibration, affected share (Tables XIV–XVI).
+- `final_auc_ci.csv`, `final_paired.csv`: held-out ROC-AUC with block-bootstrap intervals (Table VIII of the paper).
+- `nearchannel_ci.csv`, `nearchannel_paired.csv`: the near-channel headline test and the HAND-only / HAND-cut baselines (Table IX).
+- `scores.csv`, `best_params.csv`, `optimism_gap.csv`, `knndm_gap.csv`: nine-learner comparison and inner-vs-held-out gaps (Table X).
+- `ablation_preview.csv`: feature-group ablation (Table XX).
+- `attenuation_bins.csv`, `attenuation_fit.csv`, `attenuation_boot.csv`: the attenuation curve and its three bootstrap schemes (Table XI).
+- `calibration.csv`, `recalibration.csv`, `damaged_share_*.csv`: calibration, intercept-only recalibration, affected share (Tables XII–XV).
 - `predictions_loro.csv`: per-building held-out predictions of the four final models.
-- `cleaning_log.csv`: the three cleaning rules (Table V).
+- `cleaning_log.csv`: the three cleaning rules (Table XVII).
+- `review_*.csv`: the near-channel cutoff, lower-reach label bound, one-settlement recalibration and denominator checks of `31_review_checks.py`.
 
 ## Reproducing
 
@@ -45,11 +46,11 @@ bash run_all.sh
 bash run_all.sh --audit
 ```
 
-The first run downloads the raw inputs (about 2.5 GB), then runs steps 01 to 30 in about an hour on a laptop. The `--audit` flag also rebuilds the audit chips (steps 09, 11 and 29; needs internet); recorded judgements are kept.
+The first run downloads the raw inputs (about 2.5 GB), then runs steps 01 to 31 in about an hour on a laptop. The `--audit` flag also rebuilds the audit chips (steps 09, 11 and 29; needs internet); recorded judgements are kept.
 
 Raw downloads (`pilot/data/raw/`) and intermediate rasters (`pilot/data/interim/`) are not in the repository; `01_download.py`
 fetches them from Copernicus EMS, the Copernicus DEM bucket, Overture Maps and OpenStreetMap. The paper is compiled with
-`latexmk -pdf paper.tex` in `paper/` (on a TeX Live without Helvetica/Courier metrics, see the comment at the top of `paper.tex`).
+`latexmk -pdf paper.tex` in `paper/`; if a `local-fonts.tex` file is present next to it, the preamble loads it to substitute fonts missing from the local TeX installation.
 
 ## Licences
 

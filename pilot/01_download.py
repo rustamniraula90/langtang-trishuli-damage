@@ -17,7 +17,6 @@ import zipfile
 import duckdb
 
 RAW = pathlib.Path("data/raw")
-
 BBOX = (84.90, 27.75, 85.45, 28.32)
 
 DEM_TILES = [

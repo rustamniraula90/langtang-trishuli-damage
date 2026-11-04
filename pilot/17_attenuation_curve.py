@@ -111,17 +111,16 @@ def main():
             if form == "log":
                 xs = np.linspace(bins["km"].min(), bins["km"].max(), 200)
                 ax.plot(xs, m.predict(transform(pd.DataFrame({"km": xs}), form, c)), color=colour,
-                        label=f"{target}: {per_doubling:+.0f} m per doubling "
-                              f"(95% block-bootstrap CI {lo*np.log(2):+.0f} to {hi*np.log(2):+.0f}); c = {c} km")
+                        label=f"{target} (c = {c} km)")
         ax.scatter(bins["km"], bins["h50"], color=colour, s=18)
         bins.insert(0, "target", target)
         bin_tables.append(bins)
         print(f"{target}: leave-one-bin-out RMSE", {f"{f}{'' if f=='linear' else f'(c={c})'}": round(v, 2)
                                                      for (f, c), v in cv.items()})
-    ax.set_xlabel("Distance along the river from the border (km)")
-    ax.set_ylabel("HAND$_{50}$ (m)")
-    ax.set_title(f"Attenuation curve: HAND$_{{50}}$ per {BIN_KM:.0f}-km bin, OLS on log(distance + c)", fontsize=10)
-    ax.legend(fontsize=7)
+    ax.set_xlabel("Distance along the river from the border (km)", fontsize=12)
+    ax.set_ylabel("HAND$_{50}$ (m)", fontsize=12)
+    ax.tick_params(labelsize=11)
+    ax.legend(fontsize=11, frameon=False)
     fig.tight_layout()
     fig.savefig("results/fig_attenuation_final.png", dpi=150)
     pd.concat(bin_tables).to_csv("results/attenuation_bins.csv", index=False)

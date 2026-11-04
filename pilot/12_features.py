@@ -45,9 +45,7 @@ def curvatures(dem):
     g2 = p ** 2 + q ** 2 + 1e-12
     profile = -(p ** 2 * r + 2 * p * q * s + q ** 2 * t) / (g2 * (1 + g2) ** 1.5)
     plan = -(q ** 2 * r - 2 * p * q * s + p ** 2 * t) / g2 ** 1.5
-
     plan = np.where(g2 < np.tan(np.radians(2.0)) ** 2, 0.0, plan)
-
     return profile, plan
 
 def path_order(path_mask, along):
@@ -110,7 +108,6 @@ def main():
     col, row = ~transform * (np.asarray(bx), np.asarray(by))
     row, col = row.astype(int), col.astype(int)
     k = nearest[row, col]
-
     cross = dx[k] * (by - y[k]) - dy[k] * (bx - x[k])
     bend = -np.sign(cross) * kappa[k]
 

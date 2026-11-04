@@ -2,7 +2,7 @@
 
 *Individual assignment · six weeks, starting Mon 28 Sep 2026 · the pilot is done (`pilot/`).*
 
-**Status 29 Oct 2026:** Weeks 1-4 complete (`WEEK1_REPORT.md`-`WEEK4_REPORT.md`); the paper draft is in `paper/paper.tex`. The label audit is done, and the near-channel test is now the headline result (`WEEK4_REPORT.md` §6.6, `pilot/30_nearchannel_ci.py`).
+Status 29 Oct 2026: Weeks 1-4 complete (`WEEK1_REPORT.md`-`WEEK4_REPORT.md`); the paper draft is in `paper/paper.tex`. The label audit is done, and the near-channel test is now the headline result (`WEEK4_REPORT.md` §6.6, `pilot/30_nearchannel_ci.py`).
 
 The literature and research questions are in `TOPIC_B_LITERATURE_REVIEW.md`. Pilot code and results are in `pilot/`.
 
@@ -17,7 +17,7 @@ The literature and research questions are in `TOPIC_B_LITERATURE_REVIEW.md`. Pil
 - Where the headroom is:
   - near-channel buildings: AUC 0.76–0.88
   - destroyed vs damaged: AUC 0.58–0.87 (0.77–0.90 with attenuation features)
-- Key pattern: the critical HAND falls downstream (~50 m → ~15 m).
+- The critical HAND falls downstream (~50 m → ~15 m).
 
 ---
 
@@ -39,7 +39,7 @@ Goal: a clean, documented building table you can defend.
 - [x] RQ4 label search: (nothing found; RQ4 dropped unless time remains) UNOSAT / EMS / ICIMOD building damage for the 8 Jul 2025 Rasuwagadhi GLOF.
 - [x] Write `data/DATA_DICTIONARY.md`: every column, its source, units and cleaning rule.
 
-**Deliverables:** cleaned `buildings.gpkg` and a cleaning log with counts dropped per rule. The cleaning log goes into the Methods section.
+Deliverables: cleaned `buildings.gpkg` and a cleaning log with counts dropped per rule. The cleaning log goes into the Methods section.
 
 ### Week 2 (5 – 11 Oct): Feature engineering and exploratory analysis
 Goal: turn "where is the building in the valley" into numbers.
@@ -62,7 +62,7 @@ Terrain only. Every feature is computed from the DEM and the derived channel net
 - [x] PCA on the correlated terrain block.
 - [x] Feature selection: filter by mutual information and wrapper RFE; compare. (+ L1 path; + ablation preview)
 
-**Deliverables:** feature table plus 4–6 EDA figures.
+Deliverables: feature table plus 4–6 EDA figures.
 
 ### Week 3 (12 – 18 Oct): Modelling (every syllabus module)
 - [x] Targets: (ordinal 4-class skipped; see `WEEK3_REPORT.md`)
@@ -88,7 +88,7 @@ Terrain only. Every feature is computed from the DEM and the derived channel net
 - [x] Tuning: nested CV. The inner loop is spatial blocks; the outer loop is leave-one-reach-out.
 - [x] K-Means / hierarchical clustering of affected buildings: damage regimes, e.g. channel-bank vs fan / terrace.
 
-**Deliverables:** `results/scores.csv` (model × target × CV scheme), tuned hyperparameters.
+Deliverables: `results/scores.csv` (model × target × CV scheme), tuned hyperparameters.
 
 ### Week 4 (19 – 25 Oct): Evaluation and interpretation
 - [x] Transfer test (RQ2): leave-one-reach-out, with and without the attenuation features.
@@ -111,7 +111,7 @@ Terrain only. Every feature is computed from the DEM and the derived channel net
   - minimum footprint size
 - [x] RQ4 if labels exist: apply the model to July 2025. (No building-level labels exist; dropped. See `WEEK1_REPORT.md` §5.)
 
-**Deliverables:** final figures and tables, frozen results.
+Deliverables: final figures and tables, frozen results.
 
 ### Week 5 (26 Oct – 1 Nov): Writing
 | Section | Content | Approx. length |
@@ -129,7 +129,7 @@ Terrain only. Every feature is computed from the DEM and the derived channel net
 ### Week 6 (2 – 8 Nov): Buffer and submission
 - [x] Fill in the "n/r" performance cells in the literature table. (Done in `paper/paper.tex` Table 1; "--" marks descriptive studies.)
 - [x] Re-search for new 2026-event papers. (26 Oct 2026: no peer-reviewed building-damage or ML paper on the event found; Li 2026 arXiv remains the only event-specific preprint in the table.)
-- [x] Clean notebook / README so the whole pipeline re-runs. (`pilot/run_all.sh` runs steps 01-27; README lists the order.)
+- [x] Clean notebook / README so the whole pipeline re-runs. (`pilot/run_all.sh` runs steps 01-31; README lists the order.)
 - [ ] Proofread and submit.
 
 ---
@@ -156,6 +156,6 @@ Terrain only. Every feature is computed from the DEM and the derived channel net
 |---|---|
 | EMS labels in one area turn out unreliable | Drop or down-weight that area; report it |
 | FABDEM / ALOS download or processing fails | Keep GLO-30 and discuss DSM bias |
-| Attenuation features extrapolate badly to a held-out reach (pilot: near-channel lower reach 0.83 → 0.66) | Compare log(distance), a fitted HAND₅₀ curve and monotonic constraints; report honestly |
+| Attenuation features extrapolate badly to a held-out reach (pilot: near-channel lower reach 0.83 → 0.66) | Compare log(distance), a fitted HAND₅₀ curve and monotonic constraints; report the result either way |
 | No July 2025 labels | Drop RQ4; it is a stretch goal |
 | Time overrun | Cut the ordinal target and the curvature / TWI features; keep RQ1–RQ3 |

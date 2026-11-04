@@ -61,7 +61,7 @@ for g in ["Not affected", "Possibly damaged", "Damaged", "Destroyed"]:
 ax.set_xlim(x0, x1)
 ax.set_ylim(y0, y1)
 ax.set_xticks([]); ax.set_yticks([])
-ax.plot([], [], color=plt.cm.winter(1.0), lw=2, label="Flood path (traced)")
+ax.plot([], [], color=plt.cm.winter(1.0), lw=2, label="Flood path (D8 on DEM, from border)")
 ax.legend(loc="lower right", fontsize=7, markerscale=4, framealpha=0.9, title="EMSR927 grade", title_fontsize=7)
 ax.plot([x0 + 2000, x0 + 12000], [y0 + 2000, y0 + 2000], color="k", lw=2)
 ax.text(x0 + 7000, y0 + 2600, "10 km", ha="center", fontsize=8)

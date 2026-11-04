@@ -38,7 +38,6 @@ DST_CRS = "EPSG:32645"
 CELL = 30.0
 ENTRY_LONLAT = (85.378, 28.276)
 UPSTREAM_KM = 15.0
-
 OFFSETS = {64: (-1, 0), 128: (-1, 1), 1: (0, 1), 2: (1, 1), 4: (1, 0), 8: (1, -1), 16: (0, -1), 32: (-1, -1)}
 
 def mosaic_and_project():
@@ -115,7 +114,6 @@ def main():
     profile = mosaic_and_project()
     grid = Grid.from_raster(str(OUT / "dem_raw.tif"))
     dem = grid.read_raster(str(OUT / "dem_raw.tif"))
-
     dem_c = grid.resolve_flats(grid.fill_depressions(grid.fill_pits(dem)))
     fdir = grid.flowdir(dem_c)
     acc = grid.accumulation(fdir)

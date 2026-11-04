@@ -113,7 +113,6 @@ for target, colour, label in [("affected", "#1f77b4", "Affected"), ("destroyed",
         m = LogisticRegression(C=1e4, max_iter=5000).fit(g[["hand"]], g[target])
         b0, b1 = m.intercept_[0], m.coef_[0, 0]
         if b1 < 0:
-
             rng = np.random.default_rng(0)
             boots = []
             for _ in range(200):

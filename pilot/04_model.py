@@ -37,9 +37,7 @@ OUT.mkdir(exist_ok=True)
 SEED = 42
 GEO2 = ["hand", "dist"]
 GEO4 = ["hand", "dist", "slope", "relief"]
-
 ATT = GEO4 + ["along_km", "hand_x_along"]
-
 ATT_LOG = GEO4 + ["logd", "hand_x_logd"]
 
 MODELS = {
@@ -74,7 +72,6 @@ def evaluate(df, target, domain):
     d = df[df["valley_floor"]] if domain == "valley floor" else df
     rows = []
     for name, (feats, model) in MODELS.items():
-
         for reg in sorted(d["region"].unique()):
             tr, te = d[d["region"] != reg], d[d["region"] == reg]
             if te[target].nunique() < 2:
@@ -82,7 +79,6 @@ def evaluate(df, target, domain):
             m = clone(model).fit(tr[feats], tr[target])
             rows.append(dict(target=target, domain=domain, cv="leave-region-out", test=reg, model=name,
                              **scores(te[target].values, m.predict_proba(te[feats])[:, 1])))
-
         p = np.zeros(len(d))
         for tri, tei in GroupKFold(n_splits=5).split(d, d[target], d["block"]):
             m = clone(model).fit(d.iloc[tri][feats], d.iloc[tri][target])

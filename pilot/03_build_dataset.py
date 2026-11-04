@@ -26,7 +26,6 @@ OUT.mkdir(parents=True, exist_ok=True)
 UTM = "EPSG:32645"
 MATCH_M = 10.0
 GRADE_RANK = {"Not affected": 0, "Possibly damaged": 1, "Damaged": 2, "Destroyed": 3}
-
 ENTRY_LONLAT = (85.378, 28.276)
 
 def ems_layer(aoi_dir, layer):

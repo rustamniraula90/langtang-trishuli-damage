@@ -6,11 +6,11 @@ if [[ " $* " == *" --clean "* ]]; then rm -rf data/interim data/processed; find 
 mkdir -p results
 STEPS="01_download 02_terrain 03_build_dataset 12_features 04_model 05_map 06_hard_checks 07_log_attenuation 08_audit_footprints 10_sensitivity 13_eda 14_ablation_preview 15_models 16_imbalance 23_ismote 17_attenuation_curve 18_clustering 19_optimism_gap 20_final_eval 21_interpret 22_label_sensitivity 24_knndm 25_aoa 26_calibration 27_damaged_share"
 if [[ " $* " == *" --audit "* ]]; then STEPS="$STEPS 09_label_audit 11_audit_first_pass 29_hd_chips"; fi
-STEPS="$STEPS 28_audit_summary 30_nearchannel_ci"
+STEPS="$STEPS 28_audit_summary 30_nearchannel_ci 31_review_checks"
 for s in $STEPS; do
   echo "=== $s ==="
   $PY "$s.py" 2>&1 | grep -v -i "warning" | tee "results/log_$s.txt"
-  if [[ "$s" == "21_interpret" ]]; then
+  if [[ "$s" == "21_interpret" ]]; then   # repeat the land-cover error check with ESA WorldCover as a stand-in
     echo "=== 21_interpret (WorldCover) ==="
     LANDCOVER=worldcover $PY 21_interpret.py 2>&1 | grep -v -i "warning" | tee results/log_21_interpret_worldcover.txt
   fi

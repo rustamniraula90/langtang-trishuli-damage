@@ -1,6 +1,6 @@
 # Label audit: review record (27 Oct 2026)
 
-**Resolved 27 Oct 2026:** the author set all 13 intact-roof "possibly damaged" rows (section B) to `plausible`
+Resolved 27 Oct 2026: the author set all 13 intact-roof "possibly damaged" rows (section B) to `plausible`
 and accepted the section A calls as they stand. The paper's Label audit paragraph carries the final numbers
 and the pending marker is removed.
 

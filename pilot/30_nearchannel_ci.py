@@ -1,11 +1,14 @@
 """Near-channel evaluation with uncertainty (promotes the near-channel test to a headline result).
 
 Re-uses the out-of-reach predictions of the final fixed-hyperparameter models (20_final_eval.py,
-results/predictions_loro.csv) and scores only buildings with HAND <= 30 m and distance <= 300 m,
-i.e. the subset in which the obvious hillside negatives are removed. ROC-AUC per held-out reach
-with 95% block-bootstrap intervals (1-km blocks, B = 1000) and paired differences to logistic
-regression on the same bootstrap samples. A reach is scored only if the subset holds at least
-15 buildings of each class.
+results/predictions_loro.csv) and scores only buildings with distance <= 300 m and HAND below a
+reach-specific limit: 30 m in the middle and lower reaches, 60 m in the upper reach, where every
+building below 30 m was destroyed (the local damaging height is 60-90 m), so the limit is scaled to
+about the reach's own destroyed HAND50. This is the subset in which the obvious hillside negatives
+are removed. Targets: affected and destroyed (main set) and destroyed | affected (attenuation set,
+among the affected buildings of the subset). ROC-AUC per held-out reach with 95% block-bootstrap
+intervals (1-km blocks, B = 1000) and paired differences to logistic regression on the same
+bootstrap samples. A reach is scored only if the subset holds at least 15 buildings of each class.
 Three training-free baselines are added. "HAND only" ranks buildings by -HAND (no parameters).
 "HAND cut" is the single HAND threshold that maximises Youden's J on the near-channel buildings of
 the two training reaches, applied as a binary rule; "HAND cut (all)" chooses it on all training
@@ -20,25 +23,29 @@ from sklearn.metrics import roc_auc_score, average_precision_score, roc_curve
 from clean import load_clean
 
 SEED, B = 42, 1000
-HAND_MAX, DIST_MAX, MIN_CLASS = 30, 300, 15
+HAND_MAX, DIST_MAX, MIN_CLASS = {"Upper": 60, "Middle": 30, "Lower": 30}, 300, 15
+TARGETS = {"affected": "main", "destroyed": "main", "destroyed | affected": "attenuation"}
 
 def main():
     df, _ = load_clean(verbose=False)
     df["region"] = df["region"].str.split(" ").str[0]
-    near = df.loc[(df.hand <= HAND_MAX) & (df.dist <= DIST_MAX),
+    df["hand_max"] = df["region"].map(HAND_MAX)
+    near = df.loc[(df.hand <= df.hand_max) & (df.dist <= DIST_MAX),
                   ["bid", "region", "block", "hand", "affected", "destroyed"]]
     pred = pd.read_csv("results/predictions_loro.csv")
-    pred = pred[(pred.target.isin(["affected", "destroyed"])) & (pred.features == "main")]
+    pred = pred[[TARGETS.get(t) == f for t, f in zip(pred.target, pred.features)]]
     pred = pred.merge(near[["bid", "block", "hand"]], on="bid", how="inner")
-
     base = []
     cuts = {}
-    for target in ["affected", "destroyed"]:
+    for target in TARGETS:
+        ycol = "affected" if target == "affected" else "destroyed"
         for reg in ["Upper", "Middle", "Lower"]:
             tr_all = df[df.region != reg]
             tr_near = near[near.region != reg]
+            if target == "destroyed | affected":
+                tr_all, tr_near = tr_all[tr_all.affected == 1], tr_near[tr_near.affected == 1]
             for name, tr in [("HAND cut", tr_near), ("HAND cut (all)", tr_all)]:
-                fpr, tpr, thr = roc_curve(tr[target], -tr["hand"])
+                fpr, tpr, thr = roc_curve(tr[ycol], -tr["hand"])
                 cuts[(target, reg, name)] = -thr[np.argmax(tpr - fpr)]
             te = pred[(pred.target == target) & (pred.test == reg)].drop_duplicates("bid")
             for name, sc in [("HAND only", -te["hand"]),
@@ -68,7 +75,7 @@ def main():
         for mn in wide.columns:
             s = wide[mn].to_numpy()
             lo, hi = np.percentile(boot[mn], [2.5, 97.5])
-            ci_rows.append(dict(target=target, model=mn, test=reg, n=len(y), n_pos=n_pos, n_neg=n_neg,
+            ci_rows.append(dict(target=target, model=mn, test=reg, hand_max=HAND_MAX[reg], n=len(y), n_pos=n_pos, n_neg=n_neg,
                                 prevalence=n_pos / len(y), blocks=len(ub), auc=roc_auc_score(y, s),
                                 ci_low=lo, ci_high=hi, pr_auc=average_precision_score(y, s),
                                 hand_cut_m=cuts.get((target, reg, mn), np.nan)))
@@ -86,7 +93,7 @@ def main():
     pr = pd.DataFrame(paired_rows)
     pr.to_csv("results/nearchannel_paired.csv", index=False)
     pd.set_option("display.width", 250)
-    print(f"\nNear-channel subset (HAND <= {HAND_MAX} m, distance <= {DIST_MAX} m): "
+    print(f"\nNear-channel subset (HAND limit {HAND_MAX} m, distance <= {DIST_MAX} m): "
           f"{len(near)} of {len(df)} buildings")
     print(near.groupby("region")[["affected", "destroyed"]].agg(["size", "sum"]).to_string())
     ci["auc (95% CI)"] = ci.apply(lambda r: f"{r.auc:.3f} ({r.ci_low:.3f}-{r.ci_high:.3f})", axis=1)

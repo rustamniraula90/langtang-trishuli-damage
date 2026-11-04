@@ -63,8 +63,8 @@ Middle  143   521  7794  1998
 Upper    91    15   177   562
 false negatives (missed damage): error rate next to trees (>=30% tree cover within ~60 m) 0.071 (n=113) vs elsewhere 0.073 (n=3247); chi-square p = 1  [ICIMOD NLCMS 2022]
 false positives: error rate next to trees (>=30% tree cover within ~60 m) 0.061 (n=1481) vs elsewhere 0.136 (n=12662); chi-square p = 2.96e-16  [ICIMOD NLCMS 2022]
-Mantel-Haenszel, near trees vs not, false positive (unaffected): odds ratio 2.03, p = 5.07e-05
-Mantel-Haenszel, near trees vs not, false negative (affected): odds ratio 0.22, p = 0.01
+Mantel-Haenszel, near trees vs not, false positive (unaffected): odds ratio 2.03 (95% CI 1.39-2.98), p = 5.07e-05
+Mantel-Haenszel, near trees vs not, false negative (affected): odds ratio 0.22 (95% CI 0.07-0.74), p = 0.01
 Median slope / relief near trees vs not:
               slope  relief
 region near               

@@ -2,7 +2,7 @@
 
 1. Standardised logistic-regression coefficients (all data) with 95% block-bootstrap intervals.
 2. Permutation importance on the HELD-OUT reaches (drop in ROC-AUC when a feature is shuffled).
-3. Partial dependence of the damage probability on key features (logistic regression vs random forest).
+3. Partial dependence of the damage probability on six features (logistic regression vs random forest).
 4. A depth-3 decision tree as readable rules.
 5. Error map and error rates (from 20_final_eval.py out-of-reach predictions).
 6. Land-cover check of the DEM-bias hypothesis: are errors more common next to trees, where the
@@ -39,6 +39,9 @@ OUT = pathlib.Path("results")
 LANDCOVER = os.environ.get("LANDCOVER", "nlcms")
 SUFFIX = "_worldcover" if LANDCOVER == "worldcover" else ""
 MAIN = ["hand", "dist", "slope", "relief", "curv_profile", "curv_plan", "twi", "log_valley_w20", "chan_slope", "bend"]
+PRETTY = {"hand": "HAND (m)", "dist": "distance to path (m)", "slope": "slope (deg)", "relief": "relief (m)",
+          "curv_profile": "profile curvature", "curv_plan": "plan curvature", "twi": "wetness index",
+          "log_valley_w20": "log valley width", "chan_slope": "channel slope", "bend": "bend exposure"}
 ATTN = ["hand", "dist", "slope", "relief", "curv_profile", "curv_plan", "twi", "logd", "hand_x_logd"]
 NLCMS = pathlib.Path("data/raw/nlcms/Land cover of Nepal 2022/data/lc2022.tif")
 NLCMS_FOREST = [4]
@@ -92,15 +95,16 @@ def pdp_figure(df):
     lr = logreg().fit(df[MAIN], df["affected"])
     rf = RandomForestClassifier(300, max_depth=16, min_samples_leaf=5, class_weight="balanced", n_jobs=-1,
                                 random_state=SEED).fit(df[MAIN], df["affected"])
-    fig, axes = plt.subplots(2, 3, figsize=(13, 7))
-    for ax, f in zip(axes.ravel(), feats_show):
+    fig, axes = plt.subplots(2, 3, figsize=(12, 5.4))
+    for i, (ax, f) in enumerate(zip(axes.ravel(), feats_show)):
         for m, name, c in [(lr, "Logistic regression", "#1f77b4"), (rf, "Random forest", "#ff7f0e")]:
             pd_ = partial_dependence(m, df[MAIN], [MAIN.index(f)], grid_resolution=40, percentiles=(0.02, 0.98))
-            ax.plot(pd_["grid_values"][0], pd_["average"][0], label=name, color=c)
-        ax.set_title(f, fontsize=10)
-        ax.set_ylabel("P(affected), averaged")
-    axes[0, 0].legend(fontsize=8)
-    fig.suptitle("Partial dependence (all data, main feature set, class-weighted models)")
+            ax.plot(pd_["grid_values"][0], pd_["average"][0], label=name, color=c, lw=1.8)
+        ax.set_title(PRETTY[f], fontsize=15)
+        ax.tick_params(labelsize=12)
+        if i % 3 == 0:
+            ax.set_ylabel("P(affected), averaged", fontsize=13)
+    axes[0, 0].legend(fontsize=12, frameon=False)
     fig.tight_layout()
     fig.savefig(OUT / "fig_partial_dependence.png", dpi=140)
     plt.close(fig)
@@ -142,19 +146,25 @@ def land_cover_share(df):
     return share[row, col], name
 
 def mantel_haenszel(g, exposure, outcome, strata):
-    """Mantel-Haenszel common odds ratio and continuity-corrected chi-square p over strata."""
+    """Mantel-Haenszel common odds ratio, its Robins-Breslow-Greenland 95% interval and the
+    continuity-corrected chi-square p over strata."""
     num = den = a_obs = a_exp = var = 0.0
+    pr = ps_qr = qs = 0.0
     for _, s in g.groupby(strata, observed=True):
         n = len(s)
         if n < 2 or s[exposure].nunique() < 2:
             continue
         a = ((s[exposure] == 1) & (s[outcome] == 1)).sum(); b = ((s[exposure] == 1) & (s[outcome] == 0)).sum()
         c = ((s[exposure] == 0) & (s[outcome] == 1)).sum(); d = ((s[exposure] == 0) & (s[outcome] == 0)).sum()
-        num += a * d / n; den += b * c / n
+        r, q, p_, q_ = a * d / n, b * c / n, (a + d) / n, (b + c) / n
+        num += r; den += q
+        pr += p_ * r; ps_qr += p_ * q + q_ * r; qs += q_ * q
         n1, m1 = a + b, a + c
         a_obs += a; a_exp += n1 * m1 / n; var += n1 * (n - n1) * m1 * (n - m1) / (n * n * (n - 1))
     stat = (abs(a_obs - a_exp) - 0.5) ** 2 / var
-    return num / den, chi2.sf(stat, 1)
+    orr = num / den
+    v = pr / (2 * num ** 2) + ps_qr / (2 * num * den) + qs / (2 * den ** 2)
+    return orr, chi2.sf(stat, 1), (np.exp(np.log(orr) - 1.96 * v ** 0.5), np.exp(np.log(orr) + 1.96 * v ** 0.5))
 
 def main():
     df, _ = load_clean(verbose=False)
@@ -195,15 +205,14 @@ def main():
         print(f"{name}: error rate next to trees (>=30% tree cover within ~60 m) "
               f"{err[near_tree].mean():.3f} (n={near_tree.sum()}) vs elsewhere {err[~near_tree].mean():.3f} "
               f"(n={(~near_tree).sum()}); chi-square p = {p_val:.3g}  [{lc_name}]")
-
     s = e.copy()
     s["near"] = (s["tree_share"] >= 0.3).astype(int)
     s["hb"] = pd.cut(s["hand"], [-1, 10, 20, 30, 45, 60, 90, 1e4])
     s["db"] = pd.cut(s["dist"], [-1, 100, 200, 300, 500, 1e5])
     for name, g, err in [("false positive (unaffected)", s[s.affected == 0], "FP"),
                          ("false negative (affected)", s[s.affected == 1], "FN")]:
-        oratio, p_mh = mantel_haenszel(g.assign(y=(g.error == err).astype(int)), "near", "y", ["region", "hb", "db"])
-        print(f"Mantel-Haenszel, near trees vs not, {name}: odds ratio {oratio:.2f}, p = {p_mh:.3g}")
+        oratio, p_mh, (lo, hi) = mantel_haenszel(g.assign(y=(g.error == err).astype(int)), "near", "y", ["region", "hb", "db"])
+        print(f"Mantel-Haenszel, near trees vs not, {name}: odds ratio {oratio:.2f} (95% CI {lo:.2f}-{hi:.2f}), p = {p_mh:.3g}")
     print("Median slope / relief near trees vs not:\n",
           s.groupby(["region", "near"])[["slope", "relief"]].median().round(1).to_string())
     dem = pathlib.Path("results/dem_comparison_buildings.csv")
@@ -213,18 +222,33 @@ def main():
         print("\nHAND(FABDEM) - HAND(GLO-30) by tree cover near the building (negative = GLO-30 reads higher):")
         print(d.groupby("bin", observed=True)["diff"].agg(["median", "mean", "count"]).round(2).to_string())
 
-    fig, axes = plt.subplots(1, 3, figsize=(16, 5.5))
-    colours = {"TP": "#b3001b", "TN": "#c9ced6", "FP": "#1f77b4", "FN": "#ff9f1c"}
-    for ax, reg in zip(axes, ["Upper", "Middle", "Lower"]):
+    regs = ["Upper", "Middle", "Lower"]
+    ratios = []
+    for reg in regs:
         g = e[e.region == reg]
+        dx = (g.lon.max() - g.lon.min()) * np.cos(np.deg2rad(g.lat.mean()))
+        dy = g.lat.max() - g.lat.min()
+        ratios.append(max(dx / dy, 0.45))
+    H = 4.2
+    fig, axes = plt.subplots(1, 3, figsize=(H * sum(ratios) * 1.08 + 0.8, H + 1.2),
+                             gridspec_kw=dict(width_ratios=ratios))
+    colours = {"TP": "#b3001b", "TN": "#c9ced6", "FP": "#1f77b4", "FN": "#ff9f1c"}
+    names = {"TP": "affected, flagged", "TN": "unaffected, not flagged",
+             "FP": "false positive", "FN": "false negative (missed)"}
+    for ax, reg in zip(axes, regs):
+        g = e[e.region == reg]
+        counts = []
         for k in ["TN", "TP", "FP", "FN"]:
             s = g[g.error == k]
-            ax.scatter(s.lon, s.lat, s=3 if k == "TN" else 6, c=colours[k], label=f"{k} ({len(s)})")
-        ax.set_title(f"{reg} reach (model trained on the other two)")
-        ax.set_xticks([]); ax.set_yticks([]); ax.set_aspect("equal")
-        ax.legend(fontsize=7, markerscale=3)
-    fig.suptitle("Out-of-reach errors, logistic regression (affected, main features, tuned threshold)")
-    fig.tight_layout()
+            ax.scatter(s.lon, s.lat, s=8 if k == "TN" else 16, c=colours[k], label=names[k])
+            counts.append(f"{k} {len(s):,}")
+        ax.set_title(f"{reg} reach", fontsize=20)
+        ax.text(0.03, 0.97, "\n".join(counts), transform=ax.transAxes, va="top", ha="left", fontsize=15)
+        ax.set_xticks([]); ax.set_yticks([])
+        ax.set_aspect(1 / np.cos(np.deg2rad(g.lat.mean())), adjustable="box")
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower center", ncol=4, fontsize=16, markerscale=2.5, frameon=False)
+    fig.tight_layout(rect=(0, 0.1, 1, 1), w_pad=0.5)
     fig.savefig(OUT / "fig_error_map.png", dpi=140)
 
 if __name__ == "__main__":

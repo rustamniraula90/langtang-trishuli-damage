@@ -67,7 +67,6 @@ def routed_terrain(dem_path):
     for thr in [200, 500, 1000]:
         mask = acc >= thr / cell_km2
         out[f"all{thr}"] = terrain.hand_and_distance(grid, fdir, dem_c, mask)[:2]
-
     from pyproj import Transformer
     x, y = Transformer.from_crs("EPSG:4326", terrain.DST_CRS, always_xy=True).transform(*terrain.ENTRY_LONLAT)
     channel = acc >= terrain.CHANNEL_KM2 / cell_km2

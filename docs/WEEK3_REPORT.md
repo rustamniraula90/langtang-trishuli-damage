@@ -71,7 +71,7 @@ Optimism gap = inner spatial-block tuning AUC minus held-out-reach AUC (main set
 
 - Inside the training reaches, flexible models look as good as linear ones: RF 0.931 vs logistic regression 0.930.
 - On a new reach they lose 3–5 times more. Spatial blocks *within* a reach are not enough to reveal this; only the leave-one-reach-out test does.
-- This is the central bias–variance result of the project. It also backs the Week 1 choice of leave-one-reach-out as the main test.
+- This is the project's bias–variance result, and it backs the Week 1 choice of leave-one-reach-out as the main test.
 
 ## 4. Class imbalance (`16_imbalance.py`, `results/imbalance.csv`)
 Main set, mean over held-out reaches:

@@ -66,7 +66,7 @@ These are logistic-regression results. The random forest is lower in every row, 
 
 Interpretation:
 1. Local terrain helps every task.
-2. Valley/channel geometry transfers well. It gives the best *affected* score (0.970) and does not break the near-channel lower reach (0.824 vs 0.727 with attenuation). Channel slope carries much of the downstream weakening (ρ = −0.76 with along-river distance) without having to extrapolate a distance. This is a physically meaningful result for RQ2: *the flood weakens where the valley flattens and widens, and distance alone does not explain it*.
+2. Valley/channel geometry transfers well. It gives the best *affected* score (0.970) and does not break the near-channel lower reach (0.824 vs 0.727 with attenuation). Channel slope carries much of the downstream weakening (ρ = −0.76 with along-river distance) without having to extrapolate a distance. For RQ2 this means the flood weakens where the valley flattens and widens, and distance alone does not explain it.
 3. Attenuation (log distance) is best for the destroyed tasks, but is still fragile in the near-channel lower reach.
 4. Random forests need the attenuation terms to transfer. Without them they learn reach-specific thresholds (upper reach 0.86–0.88).
 

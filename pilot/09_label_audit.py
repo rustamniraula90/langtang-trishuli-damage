@@ -147,7 +147,6 @@ def main():
             sheet[c] = sheet[c].fillna("")
         print(f"kept {int((sheet['judgement'] != '').sum())} existing judgements from {out}")
     sheet.to_csv(out, index=False)
-
     for aoi, g in sheet.groupby("aoi"):
         ims = [plt.imread(OUT / "chips" / f"{sid}.png") for sid in g["sample_id"]]
         cols = 5

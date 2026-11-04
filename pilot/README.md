@@ -27,6 +27,7 @@ The environment is pinned (Python 3.12.16). Steps, in order:
 - `.venv/bin/python 27_damaged_share.py`: observed vs predicted share of affected buildings per reach / 3-km bin
 - `.venv/bin/python 28_audit_summary.py`: tabulates the researcher's judgement column of results/audit/label_audit.csv and prints the paper's audit numbers
 - `.venv/bin/python 30_nearchannel_ci.py`: near-channel (HAND <= 30 m, dist <= 300 m) AUC with block-bootstrap CIs from the stored held-out predictions; the paper's headline test
+- `.venv/bin/python 31_review_checks.py`: the checks of the November 2026 review (near-channel cutoffs, lower-reach destroyed bound, OSM-only negatives with the fixed model, one-settlement recalibration, denominators, downstream-only attenuation fit)
 - `.venv/bin/python 29_hd_chips.py`: HD (0.2 m/px) 160 m + 80 m pre/post chips of the same audit sample -> results/audit/chips_hd/ (internet, ~30 min; run_all.sh --audit)
 
 Or simply `bash run_all.sh`: steps 01-30 in order (+ the WorldCover variant of 21); ~1 h. Add --audit to rebuild the audit chips (09, 11, 29; needs internet) before 28; the recorded judgements are kept.
@@ -181,7 +182,7 @@ The study is terrain-only by design (decision 2026-09-25): no building attribute
   - Results were unchanged to three decimals.
 - 2026-09-27, flood-path channel. Replaces the all-channels definition; see above.
 
-## Known limitations / to fix in the full study
+## Known limitations
 - The DEM is a 30 m DSM, so HAND is coarse. Distances are quantised to 30 m and some buildings sample HAND = 0 on channel cells. Try ALOS 12.5 m or FABDEM (a bare-earth DEM) and compare.
 - The upstream trace follows the largest-accumulation inflow for 15 km. Check on imagery that it stays on the Bhote Koshi / Kerung main stem.
 - Labels are photo-interpreted; "possibly damaged" is noisy. Report both binary targets.

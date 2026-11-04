@@ -77,7 +77,6 @@ def main():
                 threshold = thr[np.argmax(tpr - fpr)]
                 preds.append(pd.DataFrame({"bid": te["bid"], "target": target, "features": fs, "model": mn,
                                            "test": reg, "y": y, "score": s[mn], "threshold": threshold}))
-
             blocks = te["block"].to_numpy()
             ub = np.unique(blocks)
             members = {b: np.flatnonzero(blocks == b) for b in ub}
