@@ -36,7 +36,7 @@
 
 \title{Where the Flood Reached: Terrain-Only Classical Machine Learning of Building Damage in the 2026 Langtang Lirung--Trishuli Debris Flood, Nepal}
 
-\author{Rustam~Niraula%
+\author{Rustam~Niraula\\ Student ID: 260119%
 \thanks{R. Niraula is with the MSc Data Science and Computational Intelligence programme, Softwarica College of IT and E-commerce (Coventry University), Nepal (e-mail: 260119@softwarica.edu.np).}}
 
 \markboth{Niraula: Terrain-only machine learning of building damage, Trishuli 2026}{Niraula: Terrain-only ML of building damage, Trishuli 2026}
@@ -211,7 +211,7 @@ Lower & 6,202 & 9.1\% & 11.2\% (10--15) & 4,502 & 13.5\%\\
 \paragraph{Elevation model} GLO-30 is a surface model and includes canopy; FABDEM, which removes forests and buildings, gives HAND 1.5\,m lower at the median but changes model AUCs by less than 0.002 (Section~\ref{sec:sens}), so GLO-30 is kept.
 
 \section{Methods}\label{sec:methods}
-Fig.~\ref{fig:workflow} summarises the pipeline. Three inputs (damage grades, footprints and the elevation model) are reduced to one building table with ten terrain features and three binary targets, and land cover enters only the error analysis; every experiment of Section~\ref{sec:design} reads that table. Most score it under the leave-one-reach-out protocol described below; the attenuation curve, the regime analysis and the descriptive interpretation fits use all buildings.
+Fig.~\ref{fig:workflow} summarises the pipeline. Three inputs (damage grades, footprints and the elevation model) are reduced to one building table with ten terrain features and three binary targets, and land cover enters only the error analysis; every experiment of Section~\ref{sec:design} reads that table. Most are scored under the leave-one-reach-out protocol described below; the attenuation curve, the regime analysis and the descriptive interpretation fits use all buildings.
 
 \begin{figure*}[!t]
 \centering
@@ -247,7 +247,7 @@ Fig.~\ref{fig:workflow} summarises the pipeline. Three inputs (damage grades, fo
 \draw[arr] (eval.east) -- (exp.west |- eval.east);
 \draw[arr] (allb.east) -- (exp.west |- allb.east);
 \end{tikzpicture}
-\caption{Workflow. Three inputs (Table~\ref{tab:data}) are joined into one building table of 17,503 records with ten terrain features and three binary targets; land cover enters only the error analysis. One reach at a time is held out, with tuning inside 1-km spatial blocks; the experiments E1--E9 are listed in Table~\ref{tab:design}.}
+\caption{Workflow. The first three rows of Table~\ref{tab:data} (damage grades, footprints and the elevation model) are joined into one building table of 17,503 records with ten terrain features and three binary targets; land cover enters only the error analysis. One reach at a time is held out, with tuning inside 1-km spatial blocks; the experiments E1--E9 are listed in Table~\ref{tab:design}.}
 \label{fig:workflow}
 \end{figure*}
 
@@ -350,7 +350,7 @@ PR-AUC shows the effect of prevalence: for affected it is 0.991, 0.929 and 0.639
 \begin{table}[t]
 \centering\footnotesize
 \setlength{\tabcolsep}{2.5pt}
-\caption{Held-out ROC-AUC of the fixed models (main feature set; attenuation set for destroyed $\mid$ affected), with 95\% block-bootstrap intervals for logistic regression. Bold: best per target and reach. Fixed settings were selected from inner cross-validation over all three splits (Section~\ref{sec:methods}), so every fixed row may be mildly optimistic; the per-split tuned means of Table~\ref{tab:models} are the clean estimates, and for gradient boosting the gap is large (Section~\ref{sec:models}). PR-AUC and balanced accuracy rows are for logistic regression at its tuned threshold, with the positive-class prevalence. \emph{R1 incl.}: logistic regression with the 1,282 ambiguous in-trace rows kept as possibly damaged (Section~\ref{sec:sens}; not bolded). $^\dagger$The whole lower-reach column for destroyed and destroyed $\mid$ affected is exploratory, for every model, because the lower reach's destroyed labels are doubtful (Section~\ref{sec:sens}); no best value is marked there.}\label{tab:final}
+\caption{Held-out ROC-AUC of the fixed models (main feature set; attenuation set for destroyed $\mid$ affected), with 95\% block-bootstrap intervals for logistic regression. Bold: best per target and reach. Fixed settings were selected from inner cross-validation over all three splits (Section~\ref{sec:methods}), so every fixed row may be mildly optimistic; the per-split tuned means of Table~\ref{tab:models} are the clean estimates, and for gradient boosting the gap is large (Section~\ref{sec:models}). PR-AUC rows are for the same logistic regression, with the positive-class prevalence; the balanced accuracy row is at its tuned threshold. \emph{R1 incl.}: logistic regression with the 1,282 ambiguous in-trace rows kept as possibly damaged (Section~\ref{sec:sens}; not bolded). $^\dagger$The whole lower-reach column for destroyed and destroyed $\mid$ affected is exploratory, for every model, because the lower reach's destroyed labels are doubtful (Section~\ref{sec:sens}); no best value is marked there.}\label{tab:final}
 \begin{tabular}{@{}llccc@{}}
 \toprule
 \textbf{Target} & \textbf{Model} & \textbf{Upper} & \textbf{Middle} & \textbf{Lower}\\
@@ -436,7 +436,7 @@ Two simple baselines give a scale for these scores. Ranking by HAND alone gives 
 \subsection{Which learners transfer (E3; RQ3)}\label{sec:models}
 With the main feature set, the linear models transfer best (Table~\ref{tab:models}); with the attenuation set the tree ensembles are competitive (Section~\ref{sec:groups}). On the same bootstrap samples, the fixed logistic regression of Table~\ref{tab:final} beats the fixed random forest by $+0.112$ (95\% interval $+0.022$ to $+0.206$) and gradient boosting by $+0.091$ ($+0.019$ to $+0.183$) in the upper reach, and by $+0.026$ and $+0.017$ in the middle reach; in the lower reach the intervals include zero. These are the fixed-model differences, and for gradient boosting the fixed model is the optimistic reading (see below). The fixed logistic regression and linear SVM are equal on average (0.970 for both; lower reach 0.958 vs.\ 0.956); the only paired difference whose interval excludes zero is $+0.002$ in the lower reach.
 
-The order of the learners is almost the same for destroyed (linear models 0.964, decision tree and $k$-NN last at 0.89--0.90) and for destroyed $\mid$ affected, where all learners are weaker (Table~\ref{tab:models}; with the attenuation set the tuned logistic regression averages 0.827, against 0.833 for the fixed model of Table~\ref{tab:final}). LDA and naive Bayes, which assume Gaussian classes, trail logistic regression by 0.02--0.04 for affected, as the right-skewed HAND and distance distributions (skewness 1.2 and 0.9) would predict. The per-split tuned models of Table~\ref{tab:models} and the fixed models of Table~\ref{tab:final} give the same mean affected AUC for logistic regression (0.969 vs.\ 0.970, although the selected penalty ranged from $C$ = 0.01 to 10 over the 27 tuned fits of three targets, three feature sets and three held-out reaches) and for the random forest (0.920 under both), so for these the fixed settings add no skill. Gradient boosting is the exception: its fixed settings score higher than the tuned ones (0.929 vs.\ 0.887), because the inner search chose a learning rate of 0.05 or 31 leaves in two of the three splits and those choices transfer worse, so its fixed-model scores are the more favourable reading.
+The order of the learners is almost the same for destroyed (linear models 0.964, decision tree and $k$-NN last at 0.89--0.90) and for destroyed $\mid$ affected, where all learners are weaker (Table~\ref{tab:models}; with the attenuation set the tuned logistic regression averages 0.827 (not tabulated), against 0.833 for the fixed model of Table~\ref{tab:final}). LDA and naive Bayes, which assume Gaussian classes, trail logistic regression by 0.02--0.04 for affected, as the right-skewed HAND and distance distributions (skewness 1.2 and 0.9) would predict. The per-split tuned models of Table~\ref{tab:models} and the fixed models of Table~\ref{tab:final} give the same mean affected AUC for logistic regression (0.969 vs.\ 0.970, although the selected penalty ranged from $C$ = 0.01 to 10 over the 27 tuned fits of three targets, three feature sets and three held-out reaches) and for the random forest (0.920 under both), so for these the fixed settings add no skill. Gradient boosting is the exception: its fixed settings score higher than the tuned ones (0.929 vs.\ 0.887), because the inner search chose a learning rate of 0.05 or 31 leaves in two of the three splits and those choices transfer worse, so its fixed-model scores are the more favourable reading.
 
 \begin{table}[t]
 \centering\footnotesize
